@@ -50,7 +50,13 @@ html, body {
 }
 
 
+/* Telegram Button */
+.call-form-btn:nth-child(2) {
+    background-color: #0088cc; /* Синий цвет для Telegram */
+}
 
+.call-form-btn:nth-child(2):hover {
+    background-color: #006699; /* Цвет при наведении для Telegram */
 
 /* Стили для списков в боковом меню */
 .sidebar ul {
