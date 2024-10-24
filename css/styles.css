@@ -32,6 +32,26 @@ html, body {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
+.call-form-btn {
+    background-color: #25D366; /* Зеленый цвет WhatsApp */
+    color: white;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    transition: background-color 0.3s;
+}
+
+.call-form-btn:hover {
+    background-color: #128C7E; /* Цвет при наведении */
+}
+
+
+
+
 /* Стили для списков в боковом меню */
 .sidebar ul {
     list-style-type: none;
