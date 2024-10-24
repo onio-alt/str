@@ -1,1 +1,235 @@
-1
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказать Компьютерно-техническую экспертизу</title>
+    <meta name="description" content="Компьютерно-техническая экспертиза, судебная экспертиза, исследование компьютерных систем и данных">
+    <meta name="keywords" content="судебная экспертиза, компьютерно-техническая экспертиза, IT экспертиза, кибербезопасность, компьютерные исследования, анализ данных">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Подключение файла стилей для космического фона -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(to right, #1a1a1a, #0c0c0c);
+        }
+
+        .sidebar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            background: #2C2C2C;
+            margin-bottom: 5px;
+            color: #87CEEB;
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .sidebar ul li a {
+            color: #87CEEB;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li:hover {
+            background: #87CEEB;
+            color: #000;
+        }
+
+        .container {
+            margin-left: 270px; /* Отступ от левого края для основного контента */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            width: calc(100% - 290px); /* Учитываем ширину меню */
+            flex: 1; /* Заставляем контейнер занимать оставшееся пространство */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #87CEEB;
+            border-bottom: 2px solid #87CEEB;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #2C2C2C;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #87CEEB;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .subscribe-form {
+            background: #2C2C2C;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .subscribe-form input[type="text"],
+        .subscribe-form input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .subscribe-form input[type="submit"] {
+            background-color: #87CEEB;
+            color: #000;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .subscribe-form input[type="submit"]:hover {
+            background-color: #1C1C1C;
+            color: #87CEEB;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .container {
+                margin-left: 220px;
+                width: calc(100% - 240px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 180px;
+            }
+
+            .container {
+                margin-left: 200px;
+                width: calc(100% - 220px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Продукты и решения</a></li>
+            <li><a href="#">Статьи</a></li>
+            <li><a href="#">Исследования</a></li>
+            <li><a href="#">Кейсы</a></li>
+            <li><a href="#">Карта сайта</a></li>
+            <li><a href="#">Компания</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Лицензии</a></li>
+            <li><a href="#">Гарантии</a></li>
+            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="#">Эксперты</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Мероприятия</a></li>
+            <li><a href="#">Пресса о нас</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Мы в соцсетях</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Компьютерно-техническая экспертиза</h1>
+        </header>
+
+        <h2>Описание</h2>
+        <p>
+            Компьютерно-техническая экспертиза представляет собой исследование, проводимое с целью определения статуса компьютерного средства и получения информации с него. Этот процесс включает в себя оценку работоспособности, выявление нарушений и анализ данных.
+        </p>
+
+        <h2>Виды экспертиз</h2>
+        <ul>
+            <li><strong>Аппаратно-компьютерная экспертиза:</strong> Исследование компонентов на предмет работоспособности.</li>
+            <li><strong>Программно-компьютерная экспертиза:</strong> Оценка программного обеспечения и выявление нарушений.</li>
+            <li><strong>Компьютерно-сетевая экспертиза:</strong> Анализ сетевой безопасности и взаимодействия.</li>
+            <li><strong>Информационно-компьютерная экспертиза:</strong> Исследование информационных объектов.</li>
+        </ul>
+
+        <h2>Контактные данные</h2>
+        <p>Телеграм: <a href="https://t.me/IT_Expert_strexpit" style="color: #87CEEB;">IT Expert (@IT_Expert_strexpit)</a></p>
+        <p>Почта: <a href="mailto:expertiza_it@mail.ru" style="color: #87CEEB;">expertiza_it@mail.ru</a></p>
+        <p style="color: #f0e68c;">Телефон: 8 (926) 610 09 03</p>
+
+        <div class="subscribe-form">
+            <h2>Подписаться на новости</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Ваше имя*" required>
+                <input type="email" name="email" placeholder="Ваш e-mail*" required>
+                <label>
+                    <input type="checkbox" required> Даю согласие на обработку моих персональных данных.
+                </label>
+                <label>
+                    <input type="checkbox" required> Даю согласие на получение информационной и рекламной рассылки.
+                </label>
+                <input type="submit" value="Подписаться">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Компьютерно-техническая экспертиза. Все права защищены.</p>
+    </footer>
+    
+</body>
+
+</html>
