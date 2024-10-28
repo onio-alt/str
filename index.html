@@ -47,6 +47,7 @@
             -moz-user-select: none;    /* Для Firefox */
             -ms-user-select: none;     /* Для IE */
             user-select: none;         /* Стандартное свойство */
+            padding-top: 60px; /* Добавлен верхний отступ для body */
         }
 
         .sidebar {
@@ -54,10 +55,10 @@
             padding: 20px;
             border-radius: 8px;
             width: 250px;
-            height: 100vh;
+            height: calc(100vh - 60px); /* Учтем отступ сверху */
             position: fixed;
             left: 0;
-            top: 0;
+            top: 60px; /* Изменен top для соответствия отступу */
             overflow-y: auto;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
@@ -172,6 +173,8 @@
         @media (max-width: 768px) {
             .sidebar {
                 width: 200px;
+                top: 60px; /* Изменен top для соответствия отступу */
+                height: calc(100vh - 60px);
             }
 
             .container {
@@ -183,6 +186,8 @@
         @media (max-width: 480px) {
             .sidebar {
                 width: 180px;
+                top: 60px; /* Изменен top для соответствия отступу */
+                height: calc(100vh - 60px);
             }
 
             .container {
@@ -223,11 +228,9 @@
             <li><strong>Компьютерно-сетевая экспертиза:</strong> Анализ сетевой безопасности и взаимодействия.</li>
             <li><strong>Информационно-компьютерная экспертиза:</strong> Исследование информационных объектов.</li>
         </ul>
-
         <div style="text-align: center; margin-top: 20px;">
             <img src="images/1.png" alt="Описание изображения" style="max-width: 100%; height: auto; border-radius: 8px;">
         </div>
-
         <h2>Контактные данные</h2>
         <p>Телеграм: <a href="https://t.me/IT_Expert_strexpit" style="color: #87CEEB;">@IT_Expert_strexpit</a></p>
         <p>Почта: <a href="mailto:expertiza_it@mail.ru" style="color: #87CEEB;">expertiza_it@mail.ru</a></p>
@@ -237,6 +240,7 @@
     <footer>
         <p>&copy; 2024 Компьютерно-техническая экспертиза. Все права защищены.</p>
     </footer>
+
 </body>
 
 </html>
