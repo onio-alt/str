@@ -16,6 +16,24 @@
   });
 </script>
 
+	<script>
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === "F12") {
+      e.preventDefault();
+    }
+    // Ctrl+Shift+I (для Chrome DevTools)
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+      e.preventDefault();
+    }
+    // Ctrl+U (для просмотра кода страницы)
+    if (e.ctrlKey && e.key === 'u') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+
 <!-- Подключение стилей -->
     <style>
         html, body {
