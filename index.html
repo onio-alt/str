@@ -144,6 +144,10 @@
             text-align: center;
             padding: 10px 0;
             font-size: 0.9em;
+            position: relative; /* Для правильного позиционирования */
+            bottom: 0; /* Внизу страницы */
+            left: 0;
+            right: 0;
         }
 
         .subscribe-form {
@@ -201,6 +205,11 @@
                 width: calc(100% - 220px);
             }
         }
+
+        /* Стили для иконки Telegram */
+        .telegram-icon {
+            margin-right: 5px; /* Отступ между иконкой и текстом */
+        }
     </style>
 </head>
 
@@ -234,17 +243,28 @@
             <li><strong>Компьютерно-сетевая экспертиза:</strong> Анализ сетевой безопасности и взаимодействия.</li>
             <li><strong>Информационно-компьютерная экспертиза:</strong> Исследование информационных объектов.</li>
         </ul>
+        
         <div style="text-align: center; margin-top: 20px;">
             <img src="images/1.png" alt="Описание изображения" style="max-width: 100%; height: auto; border-radius: 8px;">
         </div>
+
         <h2>Контактные данные</h2>
-        <p>Телеграм: <a href="https://t.me/IT_Expert_strexpit" style="color: #87CEEB;">@IT_Expert_strexpit</a></p>
+        <p>Телеграм: 
+            <a href="https://t.me/IT_Expert_strexpit" style="color: #87CEEB;">
+                <i class="fab fa-telegram telegram-icon"></i> IT Expert (@IT_Expert_strexpit)
+            </a>
+        </p>
         <p>Почта: <a href="mailto:expertiza_it@mail.ru" style="color: #87CEEB;">expertiza_it@mail.ru</a></p>
         <p style="color: #f0e68c;">Телефон: 8 (926) 610 09 03</p>
     </div>
 
     <footer>
         <p>&copy; 2024 Компьютерно-техническая экспертиза. Все права защищены.</p>
+        <p>Телеграм: 
+            <a href="https://t.me/IT_Expert_strexpit" style="color: #87CEEB;">
+                <i class="fab fa-telegram telegram-icon"></i> IT Expert (@IT_Expert_strexpit)
+            </a>
+        </p>
     </footer>
 
 </body>
