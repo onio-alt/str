@@ -36,18 +36,20 @@
     <!-- Подключение стилей -->
     <style>
         html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Arial', sans-serif;
-            color: #ffffff;
-            background: linear-gradient(to right, #1a1a1a, #0c0c0c);
-            -webkit-user-select: none; /* Для Chrome, Safari, Opera */
-            -moz-user-select: none;    /* Для Firefox */
-            -ms-user-select: none;     /* Для IE */
-            user-select: none;         /* Стандартное свойство */
-        }
+    height: 100%;
+    margin: 0;
+    padding-top: 20px; /* Отступ для всего содержимого */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(to right, #1a1a1a, #0c0c0c);
+    -webkit-user-select: none; /* Для Chrome, Safari, Opera */
+    -moz-user-select: none;    /* Для Firefox */
+    -ms-user-select: none;     /* Для IE */
+    user-select: none;         /* Стандартное свойство */
+}
+
 
         .sidebar {
             background-color: rgba(0, 0, 0, 0.8);
@@ -89,13 +91,17 @@
         }
 
         .container {
-            margin-left: 270px; /* Отступ от левого края для основного контента */
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            width: calc(100% - 290px); /* Учитываем ширину меню */
-            flex: 1; /* Заставляем контейнер занимать оставшееся пространство */
+           .container {
+    margin-left: 270px;
+    padding: 20px;
+    padding-top: 50px; /* Добавляем отступ сверху */
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: calc(100% - 290px); /* Учитываем ширину меню */
+    flex: 1; /* Заставляем контейнер занимать оставшееся пространство */
+}
+
         }
 
         h1 {
