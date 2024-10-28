@@ -8,33 +8,32 @@
     <meta name="description" content="Компьютерно-техническая экспертиза, судебная экспертиза, исследование компьютерных систем и данных">
     <meta name="keywords" content="судебная экспертиза, компьютерно-техническая экспертиза, IT экспертиза, кибербезопасность, компьютерные исследования, анализ данных">
     <link rel="stylesheet" href="css/styles.css"> <!-- Подключение файла стилей для космического фона -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-<script>
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-</script>
+    <script>
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+    </script>
 
-	<script>
-  document.addEventListener('keydown', function(e) {
-    // F12
-    if (e.key === "F12") {
-      e.preventDefault();
-    }
-    // Ctrl+Shift+I (для Chrome DevTools)
-    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-      e.preventDefault();
-    }
-    // Ctrl+U (для просмотра кода страницы)
-    if (e.ctrlKey && e.key === 'u') {
-      e.preventDefault();
-    }
-  });
-</script>
+    <script>
+      document.addEventListener('keydown', function(e) {
+        // F12
+        if (e.key === "F12") {
+          e.preventDefault();
+        }
+        // Ctrl+Shift+I (для Chrome DevTools)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+          e.preventDefault();
+        }
+        // Ctrl+U (для просмотра кода страницы)
+        if (e.ctrlKey && e.key === 'u') {
+          e.preventDefault();
+        }
+      });
+    </script>
 
-
-<!-- Подключение стилей -->
+    <!-- Подключение стилей -->
     <style>
         html, body {
             height: 100%;
@@ -44,6 +43,10 @@
             font-family: 'Arial', sans-serif;
             color: #ffffff;
             background: linear-gradient(to right, #1a1a1a, #0c0c0c);
+            -webkit-user-select: none; /* Для Chrome, Safari, Opera */
+            -moz-user-select: none;    /* Для Firefox */
+            -ms-user-select: none;     /* Для IE */
+            user-select: none;         /* Стандартное свойство */
         }
 
         .sidebar {
@@ -211,14 +214,12 @@
             <li><a href="#">Вакансии</a></li>
             <li><a href="#">Контакты</a></li>
             <li><a href="#">Мы в соцсетях</a></li>
-			<a href="http://wa.me/" target="_blank" class="btn btn-success position-relative rounded-circle p-4 call-form-btn">
-    <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
-</a>
-<!-- Telegram Button -->
-    <a href="https://t.me/yourTelegramUsername" target="_blank" class="btn btn-success position-relative rounded-circle p-4 call-form-btn">
-        <i class="fab fa-telegram-plane" style="font-size: 24px;"></i>
-    </a>
-
+            <a href="http://wa.me/" target="_blank" class="btn btn-success position-relative rounded-circle p-4 call-form-btn">
+                <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+            </a>
+            <a href="https://t.me/yourTelegramUsername" target="_blank" class="btn btn-success position-relative rounded-circle p-4 call-form-btn">
+                <i class="fab fa-telegram-plane" style="font-size: 24px;"></i>
+            </a>
         </ul>
     </div>
 
@@ -244,8 +245,8 @@
         <p>Телеграм: <a href="https://t.me/IT_Expert_strexpit" style="color: #87CEEB;">IT Expert (@IT_Expert_strexpit)</a></p>
         <p>Почта: <a href="mailto:expertiza_it@mail.ru" style="color: #87CEEB;">expertiza_it@mail.ru</a></p>
         <p style="color: #f0e68c;">Телефон: 8 (926) 610 09 03</p>
-
-         <!--<div class="subscribe-form">
+    </div>
+     <!--<div class="subscribe-form">
             <h2>Подписаться на новости</h2>
             <form action="#" method="post">
                 <input type="text" name="name" placeholder="Ваше имя*" required>
@@ -260,7 +261,6 @@
             </form>
         </div>
     </div>-->
-	    
     <footer>
         <p>&copy; 2024 Компьютерно-техническая экспертиза. Все права защищены.</p>
     </footer>
