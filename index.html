@@ -11,31 +11,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <script>
-      document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-      });
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
     </script>
 
     <script>
-      document.addEventListener('keydown', function(e) {
-        // F12
-        if (e.key === "F12") {
-          e.preventDefault();
-        }
-        // Ctrl+Shift+I (для Chrome DevTools)
-        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-          e.preventDefault();
-        }
-        // Ctrl+U (для просмотра кода страницы)
-        if (e.ctrlKey && e.key === 'u') {
-          e.preventDefault();
-        }
-      });
+        document.addEventListener('keydown', function (e) {
+            // F12
+            if (e.key === "F12") {
+                e.preventDefault();
+            }
+            // Ctrl+Shift+I (для Chrome DevTools)
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                e.preventDefault();
+            }
+            // Ctrl+U (для просмотра кода страницы)
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+            }
+        });
     </script>
 
     <!-- Подключение стилей -->
     <style>
-       html, body {
+        html, body {
             height: 100%;
             margin: 0;
             display: flex;
@@ -47,7 +47,11 @@
             -moz-user-select: none;    /* Для Firefox */
             -ms-user-select: none;     /* Для IE */
             user-select: none;         /* Стандартное свойство */
-            padding-top: 60px; /* Добавлен верхний отступ для body */
+            box-sizing: border-box; /* Устанавливаем box-sizing для всех элементов */
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit; /* Наследуем box-sizing */
         }
 
         .sidebar {
@@ -55,7 +59,7 @@
             padding: 20px;
             border-radius: 8px;
             width: 250px;
-            height: calc(100vh - 60px); /* Учтем отступ сверху */
+            height: calc(100vh - 60px); /* Учитываем отступ сверху */
             position: fixed;
             left: 0;
             top: 60px; /* Изменен top для соответствия отступу */
@@ -98,6 +102,8 @@
             border-radius: 8px;
             width: calc(100% - 290px); /* Учитываем ширину меню */
             flex: 1; /* Заставляем контейнер занимать оставшееся пространство */
+            overflow-y: auto; /* Добавляем прокрутку при необходимости */
+            height: calc(100vh - 60px); /* Задаем высоту для контейнера */
         }
 
         h1 {
