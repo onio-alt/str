@@ -6,99 +6,54 @@
 }
 
 /* Основные стили для HTML и body */
-/* Основные стили для HTML и body */
 html, body {
     height: 100%;
     font-family: 'Arial', sans-serif;
     color: #333;
-    
-    /* Задаем фон с градиентом */
-    background: linear-gradient(to right, #e0f7fa, #ffffff) !important; /* Добавлен !important */
-    background-attachment: fixed !important; /* Фон фиксируется при прокрутке */
+    background: linear-gradient(to right, #e0f7fa, #ffffff) !important;
+    background-attachment: fixed !important;
+    display: flex;
+    justify-content: center; /* Центрируем основной контейнер */
+    align-items: center; /* Центрируем основной контейнер по вертикали */
+    padding: 0;
+    margin: 0;
 }
+
+/* Контейнер для всего содержимого */
+.wrapper {
+    display: flex;
+    max-width: 1200px; /* Ограничиваем максимальную ширину */
+    width: 100%;
+    height: auto; /* Убираем фиксированную высоту */
+    margin: 20px auto; /* Центрируем по горизонтали */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
 }
 
 /* Стили для бокового меню */
 .sidebar {
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 8px;
     width: 250px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
     overflow-y: auto;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-}
-
-.call-form-btn {
-    background-color: #25D366; /* Зеленый цвет WhatsApp */
-    color: white;
-    border: none;
-    text-align: center;
-    display: inline-block;
-    font-size: 20px;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    transition: background-color 0.3s;
-}
-
-.call-form-btn:hover {
-    background-color: #128C7E; /* Цвет при наведении */
-}
-
-
-/* Telegram Button */
-.call-form-btn:nth-child(2) {
-    background-color: #0088cc; /* Синий цвет для Telegram */
-}
-
-.call-form-btn:nth-child(2):hover {
-    background-color: #006699; /* Цвет при наведении для Telegram */
-
-/* Стили для списков в боковом меню */
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-/* Стили для ссылок бокового меню */
-.sidebar ul li a {
-    color: #007BFF; /* Синий цвет для ссылок */
-    text-decoration: none;
-    display: block;
-}
-
-/* Эффект при наведении на пункты меню */
-.sidebar ul li:hover {
-    background: #007BFF; /* Синий фон при наведении */
-    color: white; /* Белый цвет текста при наведении */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Контейнер для основного контента */
 .container {
-    margin-left: 270px; /* Отступ от левого края для основного контента */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    flex: 1; /* Заставляем контейнер занимать оставшееся пространство */
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-left: 2px solid #007BFF;
 }
 
 /* Стили для заголовков */
 h1 {
     font-size: 2.5em;
     text-align: center;
-    color: #007BFF; /* Синий цвет для заголовка */
+    color: #007BFF;
 }
 
 h2 {
@@ -109,91 +64,87 @@ h2 {
     margin-top: 20px;
 }
 
-/* Стили для параграфов */
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
 /* Стили для списков услуг */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
 ul li {
-    background: #f8f9fa; /* Светлый фон для элементов списка */
+    background: #f8f9fa;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
-    border-left: 4px solid #007BFF; /* Левый бордер для выделения */
+    border-left: 4px solid #007BFF;
 }
 
 /* Стили для подвала */
 footer {
-    background-color: #007BFF; /* Синий фон для подвала */
+    background-color: #007BFF;
     color: white;
     text-align: center;
     padding: 15px 0;
     font-size: 0.9em;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
 
-/* Стили для формы подписки */
-.subscribe-form {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Стили для инпутов в форме подписки */
-.subscribe-form input[type="text"],
-.subscribe-form input[type="email"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #007BFF; /* Синяя рамка */
-    border-radius: 5px;
-}
-
-/* Стили для кнопки отправки формы подписки */
-.subscribe-form input[type="submit"] {
-    background-color: #007BFF; /* Синий фон для кнопки */
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Эффект при наведении на кнопку отправки */
-.subscribe-form input[type="submit"]:hover {
-    background-color: #0056b3; /* Темно-синий цвет при наведении */
-}
-
-/* Мобильные стили */
+/* Мобильные стили для ширины экрана до 768px */
 @media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column; /* Переключаемся на вертикальную компоновку */
+        max-width: 100%; /* Растягиваем до ширины экрана */
+        margin: 0; /* Убираем внешние отступы */
+        box-shadow: none;
+    }
+
     .sidebar {
-        width: 200px;
+        width: 100%; /* Растягиваем боковое меню на всю ширину */
+        height: auto;
+        box-shadow: none;
+        padding: 15px;
+        margin-bottom: 15px; /* Отступ снизу для отделения от основного контента */
     }
 
     .container {
-        margin-left: 220px;
-        width: calc(100% - 240px);
+        width: 100%; /* Основной контент тоже на всю ширину */
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em; /* Уменьшаем размер заголовка для мобильных */
+    }
+
+    h2 {
+        font-size: 1.5em;
     }
 }
 
+/* Мобильные стили для ширины экрана до 480px */
 @media (max-width: 480px) {
+    .wrapper {
+        padding: 0; /* Убираем внутренние отступы */
+    }
+
     .sidebar {
-        width: 180px;
+        padding: 10px;
+        font-size: 0.9em; /* Уменьшаем текст для бокового меню */
     }
 
     .container {
-        margin-left: 200px;
-        width: calc(100% - 220px);
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em; /* Еще немного уменьшаем заголовки */
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p, ul li {
+        font-size: 0.9em; /* Уменьшаем шрифт для текста и списка */
+    }
+
+    .call-form-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px; /* Уменьшаем кнопку вызова */
     }
 }
