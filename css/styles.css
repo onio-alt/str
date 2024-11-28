@@ -1,150 +1,135 @@
-/* Сброс базовых стилей */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Основные стили для HTML и body */
 html, body {
     height: 100%;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background: linear-gradient(to right, #e0f7fa, #ffffff) !important;
-    background-attachment: fixed !important;
-    display: flex;
-    justify-content: center; /* Центрируем основной контейнер */
-    align-items: center; /* Центрируем основной контейнер по вертикали */
-    padding: 0;
     margin: 0;
-}
-
-/* Контейнер для всего содержимого */
-.wrapper {
     display: flex;
-    max-width: 1200px; /* Ограничиваем максимальную ширину */
-    width: 100%;
-    height: auto; /* Убираем фиксированную высоту */
-    margin: 20px auto; /* Центрируем по горизонтали */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    background: url('images/653.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
 }
 
-/* Стили для бокового меню */
-.sidebar {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    width: 250px;
-    overflow-y: auto;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+nav {
+    background-color: #0000FF;  /* Dark blue background */
+    padding: 15px 20px;
+    border: 5px solid #0000FF;  /* Blue border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: px;  /* Add a margin to the top */
 }
 
-/* Контейнер для основного контента */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;  /* White text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+    color: #0000FF;  /* Change hover text color to dark blue */
+    border-radius: 5px;
+}
+
 .container {
-    padding: 20px;
+    padding: 70px;
+    background-color: rgba(75, 0, 130, 0.8);  /* Dark Indigo color with opacity */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-left: 2px solid #007BFF;
+    margin-top: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Стили для заголовков */
+/* Full-width image */
+img {
+    width: 100%; /* Makes the image span the full width */
+    height: auto;
+    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+}
+
 h1 {
+    margin: 0;
     font-size: 2.5em;
     text-align: center;
-    color: #007BFF;
+    color: #333;
 }
 
 h2 {
     font-size: 2em;
-    color: #333;
-    border-bottom: 2px solid #007BFF;
+    color: #87CEEB;
+    border-bottom: 2px solid #87CEEB;
     padding-bottom: 5px;
     margin-top: 20px;
 }
 
-/* Стили для списков услуг */
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 ul li {
-    background: #f8f9fa;
+    background: #f7f7f7;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
-    border-left: 4px solid #007BFF;
+    color: #333;
 }
 
-/* Стили для подвала */
 footer {
-    background-color: #007BFF;
-    color: white;
+    background-color: #87CEEB;
+    color: #000;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
     font-size: 0.9em;
+    position: relative;
+    bottom: 0;
     width: 100%;
 }
 
-/* Мобильные стили для ширины экрана до 768px */
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column; /* Переключаемся на вертикальную компоновку */
-        max-width: 100%; /* Растягиваем до ширины экрана */
-        margin: 0; /* Убираем внешние отступы */
-        box-shadow: none;
-    }
-
-    .sidebar {
-        width: 100%; /* Растягиваем боковое меню на всю ширину */
-        height: auto;
-        box-shadow: none;
-        padding: 15px;
-        margin-bottom: 15px; /* Отступ снизу для отделения от основного контента */
-    }
-
-    .container {
-        width: 100%; /* Основной контент тоже на всю ширину */
-        margin-left: 0;
-        padding: 15px;
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
     h1 {
-        font-size: 1.8em; /* Уменьшаем размер заголовка для мобильных */
+        font-size: 2em;
     }
 
     h2 {
         font-size: 1.5em;
     }
-}
-
-/* Мобильные стили для ширины экрана до 480px */
-@media (max-width: 480px) {
-    .wrapper {
-        padding: 0; /* Убираем внутренние отступы */
-    }
-
-    .sidebar {
-        padding: 10px;
-        font-size: 0.9em; /* Уменьшаем текст для бокового меню */
-    }
 
     .container {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.5em; /* Еще немного уменьшаем заголовки */
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    p, ul li {
-        font-size: 0.9em; /* Уменьшаем шрифт для текста и списка */
-    }
-
-    .call-form-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px; /* Уменьшаем кнопку вызова */
+        padding: 15px;
     }
 }
