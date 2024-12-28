@@ -1,227 +1,968 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заказать Компьютерно-техническую экспертизу</title>
-    <meta name="description" content="Компьютерно-техническая экспертиза, судебная экспертиза, исследование компьютерных систем и данных">
-    <meta name="keywords" content="судебная экспертиза, компьютерно-техническая экспертиза, IT экспертиза, кибербезопасность, компьютерные исследования, анализ данных">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-    </script>
-
-    <script>
-        document.addEventListener('keydown', function (e) {
-            if (e.key === "F12") {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.key === 'u') {
-                e.preventDefault();
-            }
-        });
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Компьютерно-техническая экспертиза</title>
+    <meta
+      name="description"
+      content="Компьютерно-техническая экспертиза, судебная экспертиза, исследование компьютерных систем и данных."
+    />
+    <meta
+      name="keywords"
+      content="судебная экспертиза, компьютерно-техническая экспертиза, IT экспертиза, кибербезопасность, компьютерные исследования, анализ данных"
+    />
+    <!-- Подключим Google Fonts для более красивого шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Иконки -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <style>
-        html, body {
-            height: 100%;
+        /* Сброс основных стилей */
+        * {
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Arial', sans-serif;
-            color: #000000;
-            background: url('images/653.jpg') no-repeat center center fixed; 
-            background-size: cover;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        *, *::before, *::after {
-            box-sizing: inherit;
+        /* Базовые стили */
+        body {
+    font-family: 'Roboto', sans-serif;
+
+    /* Первый слой: белый градиент с настраиваемой прозрачностью 
+       (0.3, 0.5, 0.7 и т.д.) */
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0.33)),
+      url('images/653.jpg') no-repeat center center fixed;
+
+    /* Подберите размер: cover или contain */
+    background-size: cover, cover;
+
+    /* Смешиваем два слоя. 
+       Другие варианты: multiply, screen, overlay, darken, lighten
+       Подберите нужный для вас */
+    background-blend-mode: lighten;
+    
+    color: #333;
+}
+
+
+        /* Общее оформление блоков */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Шапка сайта */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #1B263B;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #415A77;
+        }
+
+        /* =========================
+           ГЛАВНОЕ МЕНЮ
+           ========================= */
         nav {
-            background-color: #87CEEB;
-            padding: 15px 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #63f7b4 0%, #7af7e3 100%);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
         }
-
-        nav ul li {
-            margin: 0 15px;
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
         }
-
-        nav ul li a {
-            color: #000;
+        .nav-links a {
+            display: inline-block;
+            background: #fff;
+            color: #0b3954;
             text-decoration: none;
             padding: 10px 20px;
-            font-size: 1.2em;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
-        nav ul li a:hover {
-            background-color: #f0f0f0;
-            color: #87CEEB;
-            border-radius: 5px;
+        .nav-links a:hover {
+            background: #0b3954;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
         }
-
-        .container {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            flex: 1;
-            margin-top: 20px;
-            max-width: 1200px;
+        .menu-toggle {
+            display: none;
             margin-left: auto;
-            margin-right: auto;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+        .nav-links.open {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
+        /* Баннер */
+        .banner {
             text-align: center;
+            color: #333;
+            padding: 50px 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .banner h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1B263B;
+        }
+        .banner p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #87CEEB;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #4682B4;
+            color: #fff;
+        }
+
+        /* Основной контейнер */
+        .container {
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1B263B;
+        }
+        .container p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .container ul li {
+            background: #F5F5F5;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .container ul li strong {
+            color: #1B263B;
+        }
+
+        /* Секция карточек */
+        .cards-section {
+            margin: 20px auto;
+            max-width: 1400px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            color: #333;
+            width: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        }
+        .card .content {
+            padding: 15px;
+        }
+        .card h3 {
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #1B263B;
+        }
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Блок фич/преимуществ */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        .feature {
+            text-align: center;
+            margin: 10px;
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: scale(1.07);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .feature .icon {
+            width: 80px;
+            height: 80px;
+            background-color: #E0FFFF;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+            cursor: pointer;
+        }
+        .feature .icon i {
+            font-size: 40px;
+            color: #333;
+        }
+        .feature .text {
+            font-size: 1rem;
+            font-weight: bold;
             color: #333;
         }
 
-        h2 {
+        /* "Как мы работаем" */
+        .how-we-work {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .how-we-work h2 {
             font-size: 2em;
-            color: #87CEEB;
-            border-bottom: 2px solid #87CEEB;
-            padding-bottom: 5px;
+            margin-bottom: 40px;
+            color: #1B263B;
+        }
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .step {
+            flex: 1 1 250px;
+            max-width: 300px;
+            min-width: 200px;
+            margin: 0 10px;
+        }
+        /* Изменяем цвет кругов на темно-зелёный */
+        .step .number-circle {
+            width: 50px;
+            height: 50px;
+            background-color: #006400; /* тёмно-зелёный */
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff; /* белый цвет шрифта, чтобы лучше было видно */
+        }
+        .step h3 {
+            font-size: 1.2rem;
+            color: #1B263B;
+            margin-bottom: 10px;
+        }
+        .step p {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* "Лицензии и аккредитации" */
+        .licenses-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .licenses-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .licenses-header h2 {
+            font-size: 2em;
+            color: #1B263B;
+        }
+        .all-docs-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .all-docs-link:hover {
+            color: #0056b3;
+        }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-content {
+            display: flex;
+            gap: 40px;
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Плавная прокрутка */
+        }
+        .license-item {
+            flex: 0 0 auto;
+            width: 250px;
+            text-align: center;
+        }
+        .license-item img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+        .license-item h3 {
+            font-size: 1.1rem;
+            color: #1B263B;
+            margin-bottom: 5px;
+        }
+        .license-item p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        /* Стрелки */
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.3rem;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .arrow-btn:hover {
+            background-color: #ddd;
+        }
+        .arrow-left {
+            left: 0;
+        }
+        .arrow-right {
+            right: 0;
+        }
+
+        /* Форма обратной связи */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #F5FFFA;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1B263B;
+        }
+        .contact-form label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            resize: none; /* Отключаем возможность масштабировать поле */
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: #87CEEB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover {
+            background: #4682B4;
+        }
+
+        /* Подвал */
+        footer {
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
         }
-
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            background: #f7f7f7;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-            color: #333;
-        }
-
-        footer {
-            background-color: #87CEEB;
-            color: #000;
-            text-align: center;
-            padding: 10px 0;
+        footer p {
             font-size: 0.9em;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            color: #333;
         }
 
-        /* Mobile responsiveness */
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            header h1 { font-size: 2em; }
+            .banner h2 { font-size: 1.8em; }
+        }
         @media (max-width: 768px) {
-            nav ul {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links.open a {
+                width: 100%;
+                text-align: center;
+                margin: 5px 0;
+            }
+            nav {
+                justify-content: space-between;
+                padding: 10px 10px;
+            }
+            nav .menu-toggle {
+                margin-right: 20px;
+            }
+            .banner {
+                margin: 10px;
+                padding: 30px 15px;
+            }
+            .banner h2 {
+                font-size: 1.6rem;
+            }
+            .banner p {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 20px;
+            }
+            .cards-section {
                 flex-direction: column;
                 align-items: center;
             }
-
-            h1 {
-                font-size: 2em;
+            .card {
+                width: 90%;
+                max-width: 350px;
             }
-
-            h2 {
-                font-size: 1.5em;
+            .card img {
+                height: auto;
             }
-
-            .container {
-                padding: 15px;
+            .features {
+                flex-direction: column;
+                padding: 20px 10px;
+            }
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .licenses-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .arrow-btn {
+                display: none;
             }
         }
+
+        /* Звёзды */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.8;
+            animation: flicker infinite ease-in-out;
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.2; }
+			
+			/* =========================
+   НОВЫЙ БЛОК: Помощь / Ваши специалисты
+   ========================= */
+.help-section {
+    display: flex;         /* Делаем элементы в строку */
+    flex-direction: row;   /* Чтобы шло слева направо */
+    align-items: center;   /* Вертикальное выравнивание */
+    gap: 20px;             /* Расстояние между текстом и картинкой */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.help-section img {
+    width: 280px; /* Примерный размер, меняйте по вкусу */
+    border-radius: 8px;
+    object-fit: cover;
+}
+.help-section ul {
+    margin-bottom: 20px;
+}
+.help-section ul li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.help-section h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #000;
+}
+
+/* Адаптивная корректировка (media-query) */
+@media (max-width: 768px) {
+  .help-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .help-section img {
+    width: 220px;
+    margin: 0 auto;
+  }
+}
+
+        }
+
     </style>
 </head>
-
 <body>
+    <!-- Шапка -->
+    <header>
+        <h1>Компьютерно-техническая экспертиза</h1>
+        <p>Профессиональный анализ компьютерных систем и данных</p>
+    </header>
 
+    <!-- Навигация с иконкой-бургер -->
     <nav>
-        <ul>
-            <li><a href="index.html">ГЛАВНАЯ</a></li>
-            <li><a href="uslugi.html">УСЛУГИ</a></li>
-            <li><a href="issledovaniya.html">ИССЛЕДОВАНИЯ</a></li>
-            <li><a href="keisy.html">КЕЙСЫ</a></li>
-            <li><a href="karta_saita.html">КАРТА САЙТА</a></li>
-            <li><a href="garantii.html">ГАРАНТИИ</a></li>
-            <li><a href="eksperty.html">ЭКСПЕРТЫ</a></li>
-            <li><a href="otzyvy.html">ОТЗЫВЫ</a></li>
-            <li><a href="kontakty.html">КОНТАКТЫ</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="#">ГЛАВНАЯ</a>
+            <a href="#">УСЛУГИ</a>
+            <a href="#">ИССЛЕДОВАНИЯ</a>
+            <a href="#">КЕЙСЫ</a>
+            <a href="#">КАРТА САЙТА</a>
+            <a href="#">ГАРАНТИИ</a>
+            <a href="#">ЭКСПЕРТЫ</a>
+            <a href="#">ОТЗЫВЫ</a>
+            <a href="#">КОНТАКТЫ</a>
+        </div>
+        <!-- Иконка гамбургера -->
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
     </nav>
 
-    <div class="container">
-        <header>
-            <h1>Компьютерно-техническая экспертиза</h1>
-        </header>
+    <!-- Баннер -->
+    <div class="banner glass-container">
+        <h2>Закажите экспертизу прямо сейчас</h2>
+        <p>Высококачественные услуги компьютерно-технической экспертизы для бизнеса и частных клиентов.</p>
+        <a href="#" class="btn">Связаться с нами</a>
+    </div>
 
+    <!-- Основной контейнер: Описание и Виды экспертиз -->
+    <div class="container glass-container">
         <h2>Описание</h2>
-        <p>Компьютерно-техническая экспертиза представляет собой исследование, проводимое с целью определения статуса компьютерного средства и получения информации с него. Этот процесс включает в себя оценку работоспособности, выявление нарушений и анализ данных.</p>
+        <p>
+            Компьютерно-техническая экспертиза представляет собой исследование, проводимое с целью определения статуса компьютерного средства и получения информации с него. Этот процесс включает в себя оценку работоспособности, выявление нарушений и анализ данных.
+        </p>
 
         <h2>Виды экспертиз</h2>
         <ul>
-              <li><strong>АППАРАТНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование компонентов на предмет работоспособности.</li>
-            <li><strong>ПРОГРАММНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Оценка программного обеспечения и выявление нарушений.</li>
-            <li><strong>КОМПЬЮТЕРНО-СЕТЕВАЯ ЭКСПЕРТИЗА - </strong> Анализ сетевой безопасности и взаимодействия.</li>
-            <li><strong>ИНФОРМАЦИОННО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование информационных объектов.</li>
-			 <li><strong>АППАРАТНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование компонентов на предмет работоспособности.</li>
-            <li><strong>ПРОГРАММНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Оценка программного обеспечения и выявление нарушений.</li>
-            <li><strong>КОМПЬЮТЕРНО-СЕТЕВАЯ ЭКСПЕРТИЗА - </strong> Анализ сетевой безопасности и взаимодействия.</li>
-            <li><strong>ИНФОРМАЦИОННО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование информационных объектов.</li>
-			 <li><strong>АППАРАТНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование компонентов на предмет работоспособности.</li>
-            <li><strong>ПРОГРАММНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Оценка программного обеспечения и выявление нарушений.</li>
-            <li><strong>КОМПЬЮТЕРНО-СЕТЕВАЯ ЭКСПЕРТИЗА - </strong> Анализ сетевой безопасности и взаимодействия.</li>
-            <li><strong>ИНФОРМАЦИОННО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование информационных объектов.</li>
-			 <li><strong>АППАРАТНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование компонентов на предмет работоспособности.</li>
-            <li><strong>ПРОГРАММНО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Оценка программного обеспечения и выявление нарушений.</li>
-            <li><strong>КОМПЬЮТЕРНО-СЕТЕВАЯ ЭКСПЕРТИЗА - </strong> Анализ сетевой безопасности и взаимодействия.</li>
-            <li><strong>ИНФОРМАЦИОННО-КОМПЬЮТЕРНАЯ ЭКСПЕРТИЗА - </strong> Исследование информационных объектов.</li>
-
+            <li>Компьютерно-техническая экспертиза телефонов и планшетов</li>
+            <li>Экспертиза соответствия работ по разработке и сопровождению ПО техническому заданию</li>
+            <li>Программно-компьютерная экспертиза</li>
+            <li>Аппаратно-компьютерная экспертиза</li>
+            <li>Экспертиза электронно-цифровой подписи</li>
+            <li>Экспертиза процесса разработки и использования программного обеспечения</li>
+            <li>Компьютерно-сетевая экспертиза</li>
+            <li>Информационно-компьютерная экспертиза</li>
+            <li>Экспертиза использования сетевых технологий</li>
+            <li>Экспертиза обстоятельств создания и использования файлов и баз данных</li>
+            <li>Экспертиза обстоятельств использования компьютерных средств</li>
+            <li>Экспертиза и аудит информационной безопасности</li>
+            <li>Фиксация содержимого интернет-страниц (заверение контента)</li>
+            <li>Экспертиза сайта</li>
+            <li>Экспертиза 1С</li>
         </ul>
-
-        <div style="text-align: center; margin-top: 20px;">
-            <img src="images/1.png" alt="Описание изображения" style="max-width: 100%; height: auto; border-radius: 8px;">
-        </div>
-
-        <h2>Контактные данные</h2>
-        <p>Телеграм: 
-            <a href="https://t.me/IT_Expert_strexpit" style="color: #87CEEB;">
-                <i class="fab fa-telegram telegram-icon"></i> @IT_Expert_strexpit
-            </a>
-        </p>
-        <p>Почта: <a href="mailto:expertiza_it@mail.ru" style="color: #87CEEB;">expertiza_it@mail.ru</a></p>
-        <p style="color: #f0e68c;">Телефон: 8 (926) 610 09 03</p>
     </div>
 
+    <!-- Секция карточек -->
+    <div class="cards-section">
+        <div class="card">
+            <img src="images/сетевая.png" alt="Сетевая экспертиза" />
+            <div class="content">
+                <h3>Сетевая экспертиза</h3>
+                <p>Анализ сетей и киберугроз для безопасного взаимодействия.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/ап.png" alt="Аппаратная экспертиза" />
+            <div class="content">
+                <h3>Аппаратная экспертиза</h3>
+                <p>Диагностика оборудования и устранение неисправностей.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/код.png" alt="Программная экспертиза" />
+            <div class="content">
+                <h3>Программная экспертиза</h3>
+                <p>Оценка программного обеспечения для выявления уязвимостей.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/forensics.png" alt="Экспертиза данных" />
+            <div class="content">
+                <h3>Экспертиза данных</h3>
+                <p>Анализ и восстановление удалённых данных с различных носителей.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/cybersecurity.png" alt="Кибербезопасность" />
+            <div class="content">
+                <h3>Кибербезопасность</h3>
+                <p>Устранение уязвимостей и предотвращение утечек данных.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/malware.png" alt="Анализ вредоносных программ" />
+            <div class="content">
+                <h3>Анализ вредоносных программ</h3>
+                <p>Обнаружение и устранение вредоносного ПО.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/security-audit.png" alt="Аудит безопасности" />
+            <div class="content">
+                <h3>Аудит безопасности</h3>
+                <p>Проверка и оптимизация систем безопасности.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/cloud-security.png" alt="Облачная безопасность" />
+            <div class="content">
+                <h3>Облачная безопасность</h3>
+                <p>Защита данных в облачных сервисах и инфраструктурах.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/network-monitoring.png" alt="Мониторинг сети" />
+            <div class="content">
+                <h3>Мониторинг сети</h3>
+                <p>Отслеживание и анализ сетевого трафика для предотвращения угроз.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Преимущества/фичи -->
+    <div class="features glass-container">
+        <div class="feature">
+            <div
+                class="icon"
+                onclick="window.open('https://yandex.ru/maps/', '_blank')"
+            >
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="text">Глобальный охват</div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div class="text">Высокие достижения в IT</div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="text">Точные аналитические данные</div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="text">Опытные IT-специалисты</div>
+        </div>
+    </div>
+
+    <!-- "Как мы работаем" -->
+    <section class="how-we-work">
+        <h2>Как мы работаем</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="number-circle">1</div>
+                <h3>Звонок или заявка</h3>
+                <p>Оставляете запрос или связываетесь по телефону. Первичная консультация бесплатно.</p>
+            </div>
+            <div class="step">
+                <div class="number-circle">2</div>
+                <h3>Предварительный анализ</h3>
+                <p>Изучаем вашу задачу, определяем объём экспертизы и сроки выполнения.</p>
+            </div>
+            <div class="step">
+                <div class="number-circle">3</div>
+                <h3>Расчёт стоимости</h3>
+                <p>Формируем предварительную смету на основании требований и сложности работ.</p>
+            </div>
+            <div class="step">
+                <div class="number-circle">4</div>
+                <h3>Подготовка проекта</h3>
+                <p>Заключаем договор и разрабатываем детальный план экспертизы.</p>
+            </div>
+            <div class="step">
+                <div class="number-circle">5</div>
+                <h3>Оплата</h3>
+                <p>Принимаем как наличные, так и безналичные формы расчёта.</p>
+            </div>
+            <div class="step">
+                <div class="number-circle">6</div>
+                <h3>Проведение экспертизы</h3>
+                <p>Выполняем необходимые анализы, тестирования и сбор данных.</p>
+            </div>
+            <div class="step">
+                <div class="number-circle">7</div>
+                <h3>Результат</h3>
+                <p>Готовим итоговый отчёт и при необходимости консультацию для заказчика.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- "Лицензии и аккредитации" -->
+    <section class="licenses-section glass-container">
+        <div class="licenses-header">
+            <h2>ЛИЦЕНЗИИ И АККРЕДИТАЦИИ</h2>
+            <a href="#" class="all-docs-link"><i class="fas fa-file-alt"></i> Все документы</a>
+        </div>
+
+        <div class="slider-container">
+            <!-- Кнопки-стрелки -->
+            <button class="arrow-btn arrow-left" onclick="slideLeft()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="slider-content" id="slider-content">
+                <!-- Пример карточки документа -->
+                <div class="license-item">
+                    <img src="images/д1.jpg" alt="Документ 1">
+                    <h3>СТРАХОВОЙ ПОЛИС</h3>
+                    <p>Полис-оферта страхования ответственности юридического лица...</p>
+                </div>
+                <!-- Несколько дублей -->
+                <div class="license-item">
+                    <img src="images/д1.jpg" alt="Документ 1">
+                    <h3>СТРАХОВОЙ ПОЛИС</h3>
+                    <p>Полис-оферта страхования ответственности юридического лица...</p>
+                </div>
+                <div class="license-item">
+                    <img src="images/д1.jpg" alt="Документ 1">
+                    <h3>СТРАХОВОЙ ПОЛИС</h3>
+                    <p>Полис-оферта страхования ответственности юридического лица...</p>
+                </div>
+                <div class="license-item">
+                    <img src="images/д1.jpg" alt="Документ 1">
+                    <h3>СТРАХОВОЙ ПОЛИС</h3>
+                    <p>Полис-оферта страхования ответственности юридического лица...</p>
+                </div>
+                <div class="license-item">
+                    <img src="images/д1.jpg" alt="Документ 1">
+                    <h3>СТРАХОВОЙ ПОЛИС</h3>
+                    <p>Полис-оферта страхования ответственности юридического лица...</p>
+                </div>
+                <!-- Пример карточки документа 2 -->
+                <div class="license-item">
+                    <img src="images/д2.jpg" alt="Документ 2">
+                    <h3>УСТАВ</h3>
+                    <p>Выдержка из устава АНО «Судебный Эксперт».</p>
+                </div>
+                <!-- Пример карточки документа 3 -->
+                <div class="license-item">
+                    <img src="images/д3.jpg" alt="Документ 3">
+                    <h3>ЛИЦЕНЗИЯ</h3>
+                    <p>Подтверждает право на проведение экспертиз.</p>
+                </div>
+            </div>
+
+            <button class="arrow-btn arrow-right" onclick="slideRight()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+<!-- НОВЫЙ БЛОК: помогите с формулировкой вопросов 
+     (перед формой обратной связи)
+-->
+<div class="help-section container glass-container">
+    <!-- Блок слева (список + заголовок) -->
+    <div>
+      <ul>
+        <li>НЕ ЗНАЕТЕ КАК СФОРМУЛИРОВАТЬ ВОПРОСЫ?</li>
+        <li>НЕ УВЕРЕНЫ, ЧТО ЭКСПЕРТИЗА БУДЕТ В ВАШУ ПОЛЬЗУ?</li>
+        <li>НЕ ЗНАЕТЕ ЧТО ДЕЛАТЬ С ЭКСПЕРТИЗОЙ ОППОНЕНТОВ?</li>
+      </ul>
+      <h2>НАШИ СПЕЦИАЛИСТЫ ВАМ ПОМОГУТ!</h2>
+    </div>
+    <!-- Картинка справа -->
+    <img src="images/мвд.png" alt="Специалист" />
+</div>
+
+
+
+
+
+    <!-- Форма обратной связи -->
+    <div class="contact-form">
+        <h2>Обратная связь</h2>
+        <form>
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Ваш email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Ваше сообщение:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <!-- Подвал -->
     <footer>
         <p>&copy; 2024 Компьютерно-техническая экспертиза. Все права защищены.</p>
     </footer>
 
+    <!-- Контейнер для "звёзд" -->
+    <div class="stars-container" id="stars-container"></div>
+
+    <!-- Скрипт для листания слайдера -->
+    <script>
+        const sliderContent = document.getElementById('slider-content');
+        function slideLeft() {
+            sliderContent.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+        function slideRight() {
+            sliderContent.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Скрипт для "звёзд" -->
+    <script>
+      const starsContainer = document.getElementById('stars-container');
+      const NUM_STARS = 80;
+
+      for (let i = 0; i < NUM_STARS; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const randomLeft = Math.random() * 100;
+        const randomTop  = Math.random() * 150;
+        star.style.left = randomLeft + '%';
+        star.style.top  = randomTop + '%';
+
+        const duration = (2 + Math.random() * 3).toFixed(2) + 's';
+        const delay    = (Math.random() * 2).toFixed(2) + 's';
+        star.style.animationDuration = duration;
+        star.style.animationDelay    = delay;
+
+        starsContainer.appendChild(star);
+      }
+
+      window.addEventListener('scroll', () => {
+        const offset = window.scrollY * 0.2;
+        starsContainer.style.transform = `translateY(${-offset}px)`;
+      });
+    </script>
+
+    <!-- Скрипт для гамбургер-меню -->
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('open');
+      }
+    </script>
 </body>
 </html>
