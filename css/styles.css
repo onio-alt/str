@@ -133,3 +133,145 @@ footer {
         padding: 15px;
     }
 }
+.form-section {
+    padding: 40px;
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+}
+
+.form-header h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #0066cc;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 32%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+textarea {
+	 resize: none; /* Отключаем возможность масштабировать поле */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.btn-submit {
+    background-color: #0066cc;
+    color: white;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #004d99;
+}
+
+.form-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: white;
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+.steps-section {
+    background: rgba(30, 144, 255, 0.9);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px; /* Закругленные углы */
+    margin: 40px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для блока */
+    max-width: 1200px; /* Ограничение ширины */
+}
+
+.steps-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.step .number {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffd700; /* Золотистый */
+}
+
+.step h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.step p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #f0f8ff;
+}
