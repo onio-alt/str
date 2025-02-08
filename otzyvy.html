@@ -122,32 +122,35 @@
     }
 
     .nav-links {
-        display: none; /* Скрыто по умолчанию */
-        flex-direction: column;
-        background: #0047AB; /* Фон для меню */
-        width: 100%;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        z-index: 1000;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+    display: none; /* Скрываем меню по умолчанию */
+    flex-direction: column;
+    background: #0047AB;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 1000;
+    padding: 0; /* Убираем внутренние отступы */
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Добавляем плавность появления */
+}
 
-    .nav-links.open {
-        display: flex; /* Показать при открытии */
-    }
+.nav-links.open {
+    display: flex; /* Показываем меню при добавлении класса */
+}
 
-    .nav-links a {
-        color: #ffffff;
-        text-align: center;
-        padding: 15px 0;
-        text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
+.nav-links a {
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
 
-    .nav-links a:hover {
-        background: #003366;
-    }
+.nav-links a:hover {
+    background: #003366;
 }
 
 
@@ -1089,13 +1092,6 @@
       });
     </script>
 
-    <!-- Скрипт для гамбургер-меню -->
-    <script>
-      function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('open');
-      }
-    </script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
