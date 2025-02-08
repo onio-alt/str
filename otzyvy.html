@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Компьютерно-техническая экспертиза</title>
+    <meta
+      name="description"
+      content="Компьютерно-техническая экспертиза, судебная экспертиза, исследование компьютерных систем и данных."
+    />
+    <meta
+      name="keywords"
+      content="судебная экспертиза, компьютерно-техническая экспертиза, IT экспертиза, кибербезопасность, компьютерные исследования, анализ данных"
+    />
+    <!-- Подключим Google Fonts для более красивого шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Иконки -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+        /* Сброс основных стилей */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+.highlight {
+    margin-top: 10px; /* Отступ сверху для разделения */
+    font-weight: bold; /* Жирный текст */
+    font-size: 1.2em; /* Увеличенный размер шрифта */
+    color: #0047AB; /* Яркий синий цвет текста */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Легкая тень */
+    padding: 5px 10px; /* Внутренние отступы */
+    background-color: rgba(240, 248, 255, 0.8); /* Светлый фон */
+    display: inline-block; /* Делает элемент блочным и обтекаемым */
+    border-radius: 8px; /* Скругление углов */
+}
+        /* Базовые стили */
+        body {
+    font-family: 'Roboto', sans-serif;
+
+    /* Первый слой: белый градиент с настраиваемой прозрачностью 
+       (0.3, 0.5, 0.7 и т.д.) */
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0.33)),
+      url('images/653.jpg') no-repeat center center fixed;
+
+    /* Подберите размер: cover или contain */
+    background-size: cover, cover;
+
+    /* Смешиваем два слоя. 
+       Другие варианты: multiply, screen, overlay, darken, lighten
+       Подберите нужный для вас */
+    background-blend-mode: lighten;
+    
+    color: #333;
+}
+
+
+        /* Общее оформление блоков */
+      .glass-container {
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+    backdrop-filter: blur(5px); /* Эффект размытия */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    border-radius: 10px; /* Скругление углов */
+    max-width: 1200px; /* Максимальная ширина блока */
+    margin: 20px auto; /* Центрирование по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+}
+
+
+        /* Шапка сайта */
+       header {
+    background: linear-gradient(to bottom, #f2f2f2, #e6e6e6); /* Светло-серый градиент */
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    border-bottom: 3px solid #0047AB; /* Синий разделитель */
+}
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #1B263B;
+        }
+        header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #111111; /* Очень тёмно-серый */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Лёгкая тень для глубины */
+}
+
+
+        /* =========================
+           ГЛАВНОЕ МЕНЮ
+           ========================= */
+       nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #0047AB 0%, #0066CC 100%); /* Приятный синий градиент */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+.nav-links a {
+    display: inline-block;
+    background: transparent; /* Убираем белый фон */
+    color: #FFFFFF; /* Белый текст для лучшей читаемости */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: none; /* Убираем тень */
+}
+.nav-links a:hover {
+    background: #003366; /* Темно-синий при наведении */
+    color: #FFFFFF; /* Белый текст остается */
+    transform: translateY(-2px); /* Легкий эффект при наведении */
+}
+
+        }
+        .menu-toggle {
+            display: none;
+            margin-left: auto;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+        .nav-links.open {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        /* Баннер */
+        .banner {
+            text-align: center;
+            color: #333;
+            padding: 50px 20px;
+            margin: 20px;
+            border-radius: 10px;
+			    margin: 0 auto; /* Центрирование блока по горизонтали */
+    
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+        url('./images/k.png') no-repeat center center; /* Картинка фона */
+    background-size: cover; /* Адаптация изображения к блоку */
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+	margin: 0 auto; /* Центрирование блока по горизонтали */
+
+}
+	
+       .banner h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1B263B;
+        }
+        .banner {
+		
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    gap: 15px; /* Расстояние между элементами */
+          .btn {
+    background: linear-gradient(90deg, #1E90FF, #00BFFF); /* Яркий градиентный фон */
+    color: #ffffff; /* Белый цвет текста */
+    padding: 15px 30px; /* Отступы внутри кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 50px; /* Полностью закругленные края */
+    font-size: 1.2em; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    transition: all 0.3s ease; /* Плавный переход для эффектов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+    border: none; /* Убираем границу */
+    display: inline-block; /* Для корректного отображения */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #00BFFF, #1E90FF); /* Изменение направления градиента при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+    transform: translateY(-3px); /* Лёгкий эффект "подъема" кнопки */
+    color: #FFF8DC; /* Светлый оттенок текста */
+}
+.btn:active {
+    transform: translateY(1px); /* Лёгкое смещение вниз */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Меньшая тень */
+}
+
+        /* Базовые стили для секции */
+.container {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url('./images/k.png') no-repeat center center; /* Картинка фона из папки */
+    background-size: cover; /* Адаптация изображения к блоку */
+    border-radius: 10px; /* Скругленные углы */
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 20px auto; /* Центрирование */
+    padding: 20px; /* Отступы внутри */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    text-align: center; /* Центрирование текста */
+}
+
+
+.container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стили для списка экспертиз */
+.expertise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.expertise-list li {
+
+    background: linear-gradient(135deg, #007BFF, #0056B3); /* Градиент */
+    border: 1px solid #0047AB; /* Граница */
+    color: #FFFFFF; /* Цвет текста */
+    border: 1px solid #0047AB; /* Граница */
+    padding: 15px 20px; /* Отступы внутри */
+    border-radius: 8px; /* Скругление углов */
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание */
+    gap: 10px; /* Расстояние между иконкой и текстом */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ограничить элементы внутри */
+}
+
+.expertise-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.expertise-list li i {
+    color: #FFFFFF; /* Цвет иконки */
+    font-size: 1.5rem; /* Размер иконки */
+    flex-shrink: 0; /* Запретить уменьшение иконки */
+}
+
+}
+
+/* Иконки */
+.expertise-list li i {
+    color: #007BFF;
+    font-size: 1.5rem;
+}
+        .container p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .container ul li {
+            background: #F5F5F5;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .container ul li strong {
+            color: #1B263B;
+        }
+
+        /* Секция карточек */
+        .cards-section {
+            margin: 20px auto;
+            max-width: 1400px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            color: #333;
+            width: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        }
+        .card .content {
+            padding: 15px;
+        }
+        .card h3 {
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #1B263B;
+        }
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Блок фич/преимуществ */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        .feature {
+            text-align: center;
+            margin: 10px;
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: scale(1.07);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .feature .icon {
+            width: 80px;
+            height: 80px;
+            background-color: #E0FFFF;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+            cursor: pointer;
+        }
+        .feature .icon i {
+            font-size: 40px;
+            color: #333;
+        }
+        .feature .text {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* "Как мы работаем" */
+        .how-we-work {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .how-we-work h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #1B263B;
+        }
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .step {
+            flex: 1 1 250px;
+            max-width: 300px;
+            min-width: 200px;
+            margin: 0 10px;
+        }
+       /* Изменяем цвет кругов на синий */
+.step .number-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #0047AB; /* Синий цвет */
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #FFFFFF; /* Белый цвет текста */
+}
+
+        .step h3 {
+            font-size: 1.2rem;
+            color: #1B263B;
+            margin-bottom: 10px;
+        }
+        .step p {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* "Лицензии и аккредитации" */
+        .licenses-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .licenses-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .licenses-header h2 {
+            font-size: 2em;
+            color: #1B263B;
+        }
+        .all-docs-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .all-docs-link:hover {
+            color: #0056b3;
+        }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-content {
+            display: flex;
+            gap: 40px;
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Плавная прокрутка */
+        }
+        .license-item {
+            flex: 0 0 auto;
+            width: 250px;
+            text-align: center;
+        }
+        .license-item img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+        .license-item h3 {
+            font-size: 1.1rem;
+            color: #1B263B;
+            margin-bottom: 5px;
+        }
+        .license-item p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        /* Стрелки */
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.3rem;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .arrow-btn:hover {
+            background-color: #ddd;
+        }
+        .arrow-left {
+            left: 0;
+        }
+        .arrow-right {
+            right: 0;
+        }
+
+        /* Форма обратной связи */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #F5FFFA;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1B263B;
+        }
+        .contact-form label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            resize: none; /* Отключаем возможность масштабировать поле */
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: #87CEEB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover {
+            background: #4682B4;
+        }
+
+        /* Подвал */
+        footer {
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        footer p {
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            header h1 { font-size: 2em; }
+            .banner h2 { font-size: 1.8em; }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links.open a {
+                width: 100%;
+                text-align: center;
+                margin: 5px 0;
+            }
+            nav {
+                justify-content: space-between;
+                padding: 10px 10px;
+            }
+            nav .menu-toggle {
+                margin-right: 20px;
+            }
+            .banner {
+                margin: 10px;
+                padding: 30px 15px;
+            }
+            .banner h2 {
+                font-size: 1.6rem;
+            }
+            .banner p {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 20px;
+            }
+            .cards-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90%;
+                max-width: 350px;
+            }
+            .card img {
+                height: auto;
+            }
+            .features {
+                flex-direction: column;
+                padding: 20px 10px;
+            }
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .licenses-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .arrow-btn {
+                display: none;
+            }
+        }
+
+        /* Звёзды */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.8;
+            animation: flicker infinite ease-in-out;
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.2; }
+	}
+			
+			/* =========================
+   НОВЫЙ БЛОК: Помощь / Ваши специалисты
+   ========================= */
+.help-section {
+    display: flex;         /* Делаем элементы в строку */
+    flex-direction: row;   /* Чтобы шло слева направо */
+    align-items: center;   /* Вертикальное выравнивание */
+    gap: 20px;             /* Расстояние между текстом и картинкой */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.help-section img {
+    width: 280px; /* Примерный размер, меняйте по вкусу */
+    border-radius: 8px;
+    object-fit: cover;
+}
+.help-section ul {
+    margin-bottom: 20px;
+}
+.help-section ul li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.help-section h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #000;
+}
+
+/* Адаптивная корректировка (media-query) */
+@media (max-width: 768px) {
+  .help-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .help-section img {
+    width: 220px;
+    margin: 0 auto;
+  }
+}
+
+        }
+
+ <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('images/653.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        
+        /* Навигация */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #0047AB 0%, #0066CC 100%);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover {
+            background: #003366;
+        }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(to bottom, #0047AB, #0056B3);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+
+        /* Контейнер отзывов */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .review {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .review h3 {
+            margin: 0 0 10px;
+            font-size: 1.3rem;
+            color: #0047AB;
+        }
+        .review p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+        .review small {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    </style>
+</head>
+
+<body>
+    <!-- Шапка -->
+ <header>
+        <h1>Отзывы наших клиентов</h1>
+        <p>Реальные истории от тех, кто уже воспользовался нашими услугами</p>
+    </header>
+
+
+
+   <!-- Навигация с иконкой-бургер -->
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">ГЛАВНАЯ</a>
+            <a href="uslugi.html">УСЛУГИ</a>
+             <a href="index.html#research-section">ИССЛЕДОВАНИЯ</a> <!-- Исправленная ссылка -->
+            <!--  <a href="#">КЕЙСЫ</a> -->
+            <!--  <a href="#">КАРТА САЙТА</a> -->
+            <a href="otzyvy.html">ОТЗЫВЫ</a>
+           <a href="#contacts">КОНТАКТЫ</a>
+        </div>
+        <!-- Иконка гамбургера 
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i> --> 
+    </nav>
+
+    <!-- Баннер -->
+    <div class="banner glass-container">
+        <h2>Закажите экспертизу прямо сейчас</h2>
+        <p>Высококачественные услуги компьютерно-технической экспертизы для юридических и физических лиц.</p>
+        <a href="#contact" class="btn">Связаться с нами</a>
+
+    </div>
+
+ 
+<!-- Контейнер отзывов -->
+    <div class="container">
+        <div class="review">
+            <h3>Айшат Магомедова</h3>
+            <p>Обратилась за экспертизой по совету коллег. Работа выполнена профессионально и с учётом всех нюансов. Благодарю вашу команду за внимательность!</p>
+            <small>Дата отзыва: 12.03.2016</small>
+        </div>
+        <div class="review">
+            <h3>Иван Смирнов</h3>
+            <p>Спасибо за качественную работу! Результаты экспертизы помогли нам разобраться с давней проблемой.</p>
+            <small>Дата отзыва: 05.07.2019</small>
+        </div>
+        <div class="review">
+            <h3>Исмаил Абдуллаев</h3>
+            <p>Очень оперативно и качественно. Команда профессионалов. Рекомендую!</p>
+            <small>Дата отзыва: 22.11.2021</small>
+        </div>
+        <div class="review">
+            <h3>Ольга Иванова</h3>
+            <p>Эксперты были вежливы и внимательны. Результат работы превзошел мои ожидания. Спасибо!</p>
+            <small>Дата отзыва: 14.02.2018</small>
+        </div>
+        <div class="review">
+            <h3>Муслим Гаджиев</h3>
+            <p>Сразу видно опытных специалистов. Документы подготовили быстро, без нареканий.</p>
+            <small>Дата отзыва: 30.08.2020</small>
+        </div>
+        <div class="review">
+            <h3>Мария Петрова</h3>
+            <p>Работа выполнена на высшем уровне. Благодарю за профессионализм и терпение.</p>
+            <small>Дата отзыва: 07.01.2024</small>
+        </div>
+        <div class="review">
+            <h3>Рамазан Алиев</h3>
+            <p>Обратился с вопросами по кибербезопасности. Отличная консультация и оперативное решение!</p>
+            <small>Дата отзыва: 20.05.2015</small>
+        </div>
+        <div class="review">
+            <h3>Анна Сидорова</h3>
+            <p>Очень довольна вашей работой. Прекрасный сервис, все объяснили доступным языком.</p>
+            <small>Дата отзыва: 16.10.2022</small>
+        </div>
+        <div class="review">
+            <h3>Фатима Исмаилова</h3>
+            <p>Отличная команда профессионалов. Спасибо за помощь в решении моего вопроса.</p>
+            <small>Дата отзыва: 01.02.2025</small>
+        </div>
+        <div class="review">
+            <h3>Дмитрий Павлов</h3>
+            <p>Благодарю за оперативную помощь. Настоятельно рекомендую вашу компанию!</p>
+            <small>Дата отзыва: 25.12.2021</small>
+        </div>
+    </div>
+
+
+
+
+
+
+
+   
+
+  
+
+<!-- НОВЫЙ БЛОК: помогите с формулировкой вопросов 
+     (перед формой обратной связи)
+-->
+<div class="help-section container glass-container">
+    <!-- Блок слева (список + заголовок) -->
+    <div>
+      <ul>
+        <li>НЕ ЗНАЕТЕ КАК СФОРМУЛИРОВАТЬ ВОПРОСЫ?</li>
+        <li>НЕ УВЕРЕНЫ, ЧТО ЭКСПЕРТИЗА БУДЕТ ВАШУ ПОЛЬЗУ?</li>
+        <li>НЕ ЗНАЕТЕ ЧТО ДЕЛАТЬ С ЭКСПЕРТИЗОЙ ОППОНЕНТОВ?</li>
+      </ul>
+      <h2>НАШИ СПЕЦИАЛИСТЫ ВАМ ПОМОГУТ!</h2>
+    </div>
+    <!-- Картинка справа -->
+    <img src="images/spec.png" alt="Специалист" style="width: 400px; height: auto;" />
+</div>
+
+
+
+
+    <!-- Форма обратной связи -->
+  <div id="contact" class="contact-form">
+    <h2>Обратная связь</h2>
+    <form action="https://formspree.io/f/xeoopgld" method="POST">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Ваше сообщение:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+<footer id="contacts" style="background: #000000; padding: 50px 20px; text-align: center; width: 100%; position: relative; left: 0;">
+    <div style="display: flex; justify-content: space-around; align-items: start; flex-wrap: wrap; margin: 0 auto; max-width: 1200px; color: #FFFFFF;">
+        <!-- Название сайта -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h3 style="font-size: 2rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">
+                strexpIT.ru
+            </h3>
+            <p style="font-size: 1.5rem; color: #4CAF50; font-weight: bold;">Круглосуточно 24/7</p>
+        </div>
+
+        <!-- Контакты -->
+        <div style="text-align: left; margin-bottom: 20px;">
+            <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Контакты</h4>
+            <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
+                Телефон: 
+                <a href="tel:+79266100903" style="color: #32CD32; text-decoration: none;">+7 926 610 09 03</a>
+            </p>
+            <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
+                Почта: 
+                <a href="mailto:rstrelkov@inbox.ru" style="color: #32CD32; text-decoration: none;">rstrelkov@inbox.ru</a>
+            </p>
+        </div>
+
+        <!-- Ссылки на мессенджеры -->
+        <div style="text-align: left; margin-bottom: 20px;">
+            <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Мессенджеры</h4>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <a href="https://t.me/IT_Expert_strexpit" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold; color: #32CD32;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 40px; vertical-align: middle;">
+                    Telegram
+                </a>
+                <a href="https://wa.me/79266100903" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold; color: #32CD32;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 40px; vertical-align: middle;">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 30px; text-shadow: none;">
+        &copy; 2015 strexpIT.ru. Все права защищены.
+    </p>
+</footer>
+
+
+
+
+    <!-- Контейнер для "звёзд" -->
+    <div class="stars-container" id="stars-container"></div>
+
+    <!-- Скрипт для листания слайдера -->
+    <script>
+        const sliderContent = document.getElementById('slider-content');
+        function slideLeft() {
+            sliderContent.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+        function slideRight() {
+            sliderContent.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Скрипт для "звёзд" -->
+    <script>
+      const starsContainer = document.getElementById('stars-container');
+      const NUM_STARS = 80;
+
+      for (let i = 0; i < NUM_STARS; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const randomLeft = Math.random() * 100;
+        const randomTop  = Math.random() * 150;
+        star.style.left = randomLeft + '%';
+        star.style.top  = randomTop + '%';
+
+        const duration = (2 + Math.random() * 3).toFixed(2) + 's';
+        const delay    = (Math.random() * 2).toFixed(2) + 's';
+        star.style.animationDuration = duration;
+        star.style.animationDelay    = delay;
+
+        starsContainer.appendChild(star);
+      }
+
+      window.addEventListener('scroll', () => {
+        const offset = window.scrollY * 0.2;
+        starsContainer.style.transform = `translateY(${-offset}px)`;
+      });
+    </script>
+
+    <!-- Скрипт для гамбургер-меню -->
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('open');
+      }
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 50, // Можно подкорректировать значение отступа
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
