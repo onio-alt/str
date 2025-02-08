@@ -103,6 +103,19 @@
         /* =========================
            ГЛАВНОЕ МЕНЮ
            ========================= */
+	    /* Мобильная версия навигации */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background: #0047AB; /* Темный фон для мобильной навигации */
+        padding: 20px;
+    }
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
        nav {
     position: sticky;
     top: 0;
