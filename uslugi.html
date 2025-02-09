@@ -235,65 +235,77 @@
 
 	   
 	   
-        nav {
-
-    position: sticky; /* Закрепляем меню сверху */
-
-       top: 0;
-
+   /* Навигация */
+nav {
+    position: sticky;
+    top: 0;
     z-index: 1000;
-
-    background: linear-gradient(90deg, #0047AB 0%, #0066CC 100%); /* Приятный синий градиент */
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-    padding: 10px;
-
+    background: linear-gradient(90deg, #0047AB, #0066CC); /* Синий градиент */
     display: flex;
-
     align-items: center;
-
-    justify-content: center;
-
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-	   
+/* Ссылки меню */
 .nav-links {
     display: flex;
     gap: 15px;
-    transition: all 0.3s ease;
-}
-.nav-links a {
-    display: inline-block;
-    background: transparent; /* Убираем белый фон */
-    color: #FFFFFF; /* Белый текст для лучшей читаемости */
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: none; /* Убираем тень */
-}
-.nav-links a:hover {
-    background: #003366; /* Темно-синий при наведении */
-    color: #FFFFFF; /* Белый текст остается */
-    transform: translateY(-2px); /* Легкий эффект при наведении */
 }
 
-        }
-        .menu-toggle {
-            display: none;
-            margin-left: auto;
-            font-size: 1.5rem;
-            color: #333;
-            cursor: pointer;
-        }
-        .nav-links.open {
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #003366; /* Темно-синий цвет */
+}
+
+/* Иконка-гамбургер */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Показываем иконку меню на мобильных устройствах */
+    }
+
+    .nav-links {
+        display: none; /* Прячем ссылки меню по умолчанию */
+        flex-direction: column; /* Ссылки располагаются вертикально */
+        position: absolute;
+        top: 50px; /* Меню появляется ниже навигации */
+        left: 0;
+        width: 100%;
+        background-color: #0047AB; /* Цвет фона для меню */
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.open {
+        display: flex; /* Показываем меню при добавлении класса .open */
+    }
+
+    .nav-links a {
+        text-align: center; /* Центрируем текст ссылок */
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links a:hover {
+        background: #003366; /* Темно-синий фон при наведении */
+    }
+}
 
         /* Баннер */
         .banner {
@@ -1080,63 +1092,7 @@
 
 		
 
-        /* Навигация */
-
-        nav {
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 1000;
-
-            background: linear-gradient(135deg, #003366, #00509E);
-
-
-
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-            padding: 10px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-        }
-
-        .nav-links {
-
-            display: flex;
-
-            gap: 15px;
-
-        }
-
-        .nav-links a {
-
-            color: #fff;
-
-            text-decoration: none;
-
-            padding: 10px 20px;
-
-            border-radius: 6px;
-
-            font-size: 1rem;
-
-            font-weight: 500;
-
-            transition: all 0.3s ease;
-
-        }
-
-        .nav-links a:hover {
-
-            background: #003366;
-
-        }
+      
 
 
 
@@ -1257,33 +1213,18 @@
 	
 
    <!-- Навигация с иконкой-бургер -->
-  nav>
-
-	    <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Гамбургер -->
-
-        <div class="nav-links">
-
-            <a href="index.html">ГЛАВНАЯ</a>
-
-            <a href="uslugi.html">УСЛУГИ</a>
-
-            <a href="#research-section">ИССЛЕДОВАНИЯ</a> <!-- Ссылка на id изображения -->
-
-            <!--  <a href="#">КЕЙСЫ</a> -->
-
-            <!--  <a href="#">КАРТА САЙТА</a> -->
-
-            <a href="otzyvy.html">ОТЗЫВЫ</a>
-
-           <a href="#contacts">КОНТАКТЫ</a>
-
-        </div>
-
-        <!-- Иконка гамбургера 
-
-        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i> --> 
-
-    </nav>
+ <nav>
+    <!-- Иконка-гамбургер -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- Ссылки меню -->
+    <div class="nav-links">
+        <a href="index.html">ГЛАВНАЯ</a>
+        <a href="uslugi.html">УСЛУГИ</a>
+        <a href="#research-section">ИССЛЕДОВАНИЯ</a>
+        <a href="otzyvy.html">ОТЗЫВЫ</a>
+        <a href="#contacts">КОНТАКТЫ</a>
+    </div>
+</nav>
 
 
 
@@ -1506,12 +1447,9 @@
     <script>
 
       function toggleMenu() {
-
-        const navLinks = document.querySelector('.nav-links');
-
-        navLinks.classList.toggle('open');
-
-      }
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('open'); // Добавляем/удаляем класс "open"
+}
 
     </script>
 
