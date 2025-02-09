@@ -235,15 +235,15 @@
 
 	   
 	   
-   /* Навигация */
+/* Основные стили для меню */
 nav {
-    position: sticky;
+    position: sticky; /* Закрепляем меню */
     top: 0;
     z-index: 1000;
     background: linear-gradient(90deg, #0047AB, #0066CC); /* Синий градиент */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Центрируем элементы по вертикали */
+    justify-content: center; /* Центрируем меню по горизонтали */
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -266,7 +266,7 @@ nav {
     background: #003366; /* Темно-синий цвет */
 }
 
-/* Иконка-гамбургер */
+/* Иконка-гамбургер для мобильной версии */
 .menu-toggle {
     display: none;
     font-size: 1.8rem;
@@ -277,7 +277,7 @@ nav {
 /* Мобильные стили */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Показываем иконку меню на мобильных устройствах */
+        display: block; /* Показываем иконку меню */
     }
 
     .nav-links {
@@ -287,17 +287,17 @@ nav {
         top: 50px; /* Меню появляется ниже навигации */
         left: 0;
         width: 100%;
-        background-color: #0047AB; /* Цвет фона для меню */
+        background-color: #0047AB; /* Фон меню */
         padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.open {
-        display: flex; /* Показываем меню при добавлении класса .open */
+        display: flex; /* Показываем меню */
     }
 
     .nav-links a {
-        text-align: center; /* Центрируем текст ссылок */
+        text-align: center; /* Центрируем текст */
         padding: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
@@ -306,6 +306,7 @@ nav {
         background: #003366; /* Темно-синий фон при наведении */
     }
 }
+
 
         /* Баннер */
         .banner {
@@ -1203,7 +1204,7 @@ nav {
     <!-- Шапка -->
  <header>
         <h1>Перечень услуг экспертизы</h1>
-        <p>Реальные истории от тех, кто уже воспользовался нашими услугами</p>
+        <p>Здесь вы можете ознакомиться с объектами судебной (внесудебной) компьютерно-технической экспертизы</p>
     </header>
 
 
