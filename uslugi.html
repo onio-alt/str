@@ -182,35 +182,43 @@
         padding: 10px 20px;
     }
 
+   .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
     .menu-toggle {
-        display: block;
-        font-size: 1.5rem;
-        color: #ffffff;
-        cursor: pointer;
+        display: block; /* Показываем иконку бургер-меню на мобильных устройствах */
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 2rem; /* Увеличиваем размер иконки */
     }
 
     .nav-links {
-        display: none; /* Скрыто по умолчанию */
+        display: none; /* Скрываем меню по умолчанию */
         flex-direction: column;
-        background: #0047AB; /* Фон для меню */
-        width: 100%;
         position: absolute;
-        top: 50px;
+        top: 60px; /* Располагаем меню под иконкой */
         left: 0;
-        z-index: 1000;
+        width: 100%;
+        background-color: #0047AB;
+        padding: 10px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.open {
-        display: flex; /* Показать при открытии */
+        display: flex; /* Показываем меню при активной ссылке */
     }
 
     .nav-links a {
-        color: #ffffff;
         text-align: center;
-        padding: 15px 0;
+        padding: 15px;
+        color: #fff;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .nav-links a:hover {
@@ -1255,32 +1263,15 @@
 
    <!-- Навигация с иконкой-бургер -->
     <nav>
-
-	    <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Гамбургер -->
-
-        <div class="nav-links">
-
-            <a href="index.html">ГЛАВНАЯ</a>
-
-            <a href="uslugi.html">УСЛУГИ</a>
-
-            <a href="#research-section">ИССЛЕДОВАНИЯ</a> <!-- Ссылка на id изображения -->
-
-            <!--  <a href="#">КЕЙСЫ</a> -->
-
-            <!--  <a href="#">КАРТА САЙТА</a> -->
-
-            <a href="otzyvy.html">ОТЗЫВЫ</a>
-
-           <a href="#contacts">КОНТАКТЫ</a>
-
-        </div>
-
-        <!-- Иконка гамбургера 
-
-        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i> --> 
-
-    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links">
+        <a href="index.html">ГЛАВНАЯ</a>
+        <a href="uslugi.html">УСЛУГИ</a>
+        <a href="#research-section">ИССЛЕДОВАНИЯ</a>
+        <a href="otzyvy.html">ОТЗЫВЫ</a>
+        <a href="#contacts">КОНТАКТЫ</a>
+    </div>
+</nav>
 
 
 
@@ -1500,9 +1491,9 @@
     <!-- Скрипт для гамбургер-меню -->
     <script>
       function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('open');
-      }
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('open');
+}
     </script>
 
 <script>
