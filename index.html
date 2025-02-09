@@ -167,16 +167,12 @@
     }
 }
 
-       nav {
-    position: sticky;
+
+	    nav {
+    position: sticky; /* Закрепляем меню сверху */
     top: 0;
-    z-index: 1000;
-    background: linear-gradient(90deg, #0047AB 0%, #0066CC 100%); /* Приятный синий градиент */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 999; /* Задаем высокий z-index */
+ background: linear-gradient(90deg, #0047AB 0%, #0066CC 100%); /* Приятный синий градиент */
 }
 .nav-links {
     display: flex;
@@ -1215,11 +1211,6 @@ html, body {
         });
     });
 </script>
-
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('open');
-}
 
 
 </body>
