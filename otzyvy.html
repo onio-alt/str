@@ -262,24 +262,39 @@
         /* Базовые стили для секции */
 
 
+/* Стили для отзывов */
 .container {
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-        url('./images/k.png') no-repeat center center; /* Картинка фона из папки */
-    background-size: cover; /* Адаптация изображения к блоку */
-    border-radius: 10px; /* Скругленные углы */
-    max-width: 1200px; /* Максимальная ширина */
-    margin: 20px auto; /* Центрирование */
-    padding: 20px; /* Отступы внутри */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
-    text-align: center; /* Центрирование текста */
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-
-
-.container h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.review {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.review h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    color: #0047AB;
+}
+.review p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    line-height: 1.5;
     color: #333;
+}
+.review small {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #777;
 }
 
 /* Стили для списка экспертиз */
