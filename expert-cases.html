@@ -1,26 +1,303 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Вставь весь <head> как на главной! Копипастишь БЕЗ изменений -->
-    <!-- ...начало твоего большого head... -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="og:logo" content="https://www.strexpit.ru/images/og_preview_strexpit.jpg" />
+    <meta property="og:image" content="https://www.strexpit.ru/images/og_preview_strexpit.jpg">
+    <meta property="og:title" content="Strexpit.ru - Компьютерно-техническая экспертиза">
+    <meta property="og:description" content="Независимые заключения, цифровая криминалистика, анализ данных">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.strexpit.ru">
+    <meta name="twitter:card" content="summary_large_image">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Примеры экспертиз | StrexpIT.ru</title>
-    <meta name="description" content="Примеры проведённых судебных и внесудебных компьютерно-технических экспертиз StrexpIT.ru — выдержки из заключений, типовые задачи, реальные решения."/>
-    <meta name="keywords" content="экспертиза, примеры экспертиз, компьютерно-техническая экспертиза, кейсы, StrexpIT"/>
-    <!-- Favicons, Google Fonts, FontAwesome, твой CSS -->
-    <!-- !!! Скопируй всё, что между <head> и </head> с главной !!! -->
-    <!-- ...весь твой CSS ... -->
-    <!-- ...окончание head... -->
+    <meta name="description" content="Примеры проведённых судебных и внесудебных компьютерно-технических экспертиз StrexpIT.ru — выдержки из заключений, типовые задачи, реальные решения.">
+    <meta name="keywords" content="экспертиза, примеры экспертиз, компьютерно-техническая экспертиза, кейсы, StrexpIT">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <!-- Google Fonts и FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background:
+                linear-gradient(rgba(255,255,255,0.33), rgba(255,255,255,0.33)),
+                url('images/653.jpg') no-repeat center center fixed;
+            background-size: cover, cover;
+            background-blend-mode: lighten;
+            color: #333;
+        }
+        .highlight {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #0047AB;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            padding: 5px 10px;
+            background-color: rgba(240,248,255,0.8);
+            display: inline-block;
+            border-radius: 8px;
+        }
+        header {
+            background: linear-gradient(to bottom, #f2f2f2, #e6e6e6);
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #0047AB;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #1B263B;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: linear-gradient(90deg, #0047AB 0%, #0066CC 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        .nav-links a {
+            display: inline-block;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+        .nav-links a:hover {
+            background: #003366;
+            color: #FFF;
+            transform: translateY(-2px);
+        }
+        .menu-toggle { display: none; margin-left: auto; font-size: 1.5rem; color: #333; cursor: pointer; }
+        .nav-links.open { flex-direction: column; align-items: center; margin-top: 10px; }
+        @media (max-width: 768px) {
+            nav { justify-content: space-between; padding: 10px 10px; }
+            .menu-toggle { display: block; }
+            .nav-links { display: none; width: 100%; }
+            .nav-links.open { display: flex; }
+            .nav-links.open a { width: 100%; text-align: center; margin: 5px 0; }
+        }
+        .banner {
+            text-align: center;
+            color: #333;
+            padding: 50px 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+                        url('./images/k.png') no-repeat center center;
+            background-size: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            max-width: 1200px;
+        }
+        .banner h2 { font-size: 2em; margin-bottom: 20px; color: #1B263B; }
+        .btn {
+            background: linear-gradient(90deg, #1E90FF, #00BFFF);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #00BFFF, #1E90FF);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            color: #FFF8DC;
+        }
+        .container {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+                url('./images/k.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .container h2 { font-size: 2rem; margin-bottom: 20px; color: #333; }
+        .cards-section {
+            margin: 20px auto;
+            max-width: 1400px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background: #fff;
+            color: #333;
+            width: 320px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+        }
+        .card .content { padding: 15px; }
+        .card h3 { margin-bottom: 10px; font-weight: 700; color: #1B263B; }
+        .card p { font-size: 1rem; line-height: 1.4; }
+        .card small { display: block; margin-top: 10px; color: #777; }
+        /* Блок помощи */
+        .help-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .help-section img {
+            width: 280px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .help-section ul {
+            margin-bottom: 20px;
+        }
+        .help-section ul li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .help-section h2 {
+            font-size: 1.8rem;
+            margin-top: 20px;
+            color: #000;
+        }
+        @media (max-width: 768px) {
+            .help-section { flex-direction: column; text-align: center; }
+            .help-section img { width: 220px; margin: 0 auto; }
+            .cards-section { flex-direction: column; align-items: center; }
+            .card { width: 90%; max-width: 350px; }
+        }
+        /* Форма */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #F5FFFA;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1B263B;
+        }
+        .contact-form label { display: block; font-weight: 700; margin-bottom: 5px; color: #333; }
+        .contact-form input,
+        .contact-form textarea {
+            resize: none;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: #87CEEB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover { background: #4682B4; }
+        /* Подвал */
+        footer {
+            background: rgba(0,0,0,1);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            width: 100%;
+            left: 0;
+            position: relative;
+        }
+        footer a { color: #32CD32; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        /* Звёзды */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.8;
+            animation: flicker infinite ease-in-out;
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.2; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Хедер -->
     <header>
         <h1>Примеры экспертиз (экспертные кейсы)</h1>
         <p>Реальные задачи и выдержки из экспертных заключений</p>
     </header>
 
-    <!-- Меню навигации -->
     <nav>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="nav-links">
@@ -33,14 +310,12 @@
         </div>
     </nav>
 
-    <!-- Баннер -->
     <div class="banner glass-container">
         <h2>Ваши задачи — наш опыт</h2>
         <p class="highlight">Сильные стороны StrexpIT.ru — реальные кейсы экспертиз</p>
         <a href="#contact" class="btn">Получить консультацию</a>
     </div>
 
-    <!-- Кейсы в карточках -->
     <div class="container glass-container">
         <h2>Недавние примеры экспертиз</h2>
         <div class="cards-section">
@@ -62,11 +337,10 @@
                     <small>Дата заключения: 23.06.2024</small>
                 </div>
             </div>
-            <!-- Добавляй новые кейсы сюда — копируй блок .card -->
+            <!-- Добавь новые кейсы по аналогии -->
         </div>
     </div>
 
-    <!-- Блок помощи — как на главной -->
     <div class="help-section container glass-container">
         <div>
             <ul>
@@ -79,7 +353,6 @@
         <img src="images/spec.png" alt="Специалист" style="width: 400px; height: auto;" />
     </div>
 
-    <!-- Форма обратной связи -->
     <div id="contact" class="contact-form">
         <h2>Обратная связь</h2>
         <form action="https://formspree.io/f/xeoopgld" method="POST">
@@ -93,24 +366,88 @@
         </form>
     </div>
 
-    <!-- Подвал (footer) — полностью скопируй с главной страницы! -->
-    <footer id="contacts" style="background: #000000; padding: 50px 20px; text-align: center; width: 100%; position: relative; left: 0;">
-        <!-- ... полностью как на главной ... -->
+    <footer id="contacts">
+        <div style="display: flex; justify-content: space-around; align-items: start; flex-wrap: wrap; margin: 0 auto; max-width: 1200px; color: #FFFFFF;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h3 style="font-size: 2rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">
+                    StrexpIT.ru
+                </h3>
+                <p style="font-size: 1.5rem; color: #4CAF50; font-weight: bold;">Круглосуточно 24/7</p>
+            </div>
+            <div style="text-align: left; margin-bottom: 20px;">
+                <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">Контакты</h4>
+                <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
+                    Телефон:
+                    <a href="tel:+79266100903">+7 926 610 09 03</a>
+                </p>
+                <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
+                    Почта:
+                    <a href="mailto:rstrelkov@inbox.ru">rstrelkov@inbox.ru</a>
+                </p>
+            </div>
+            <div style="text-align: left; margin-bottom: 20px;">
+                <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">Мессенджеры</h4>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <a href="https://t.me/IT_Expert_strexpit" target="_blank" style="display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 40px; vertical-align: middle;">
+                        Telegram
+                    </a>
+                    <a href="https://wa.me/79266100903" target="_blank" style="display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 40px; vertical-align: middle;">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 30px; text-shadow: none;">
+            &copy; 2015 StrexpIT.ru. Все права защищены.
+        </p>
+        <a href="https://webmaster.yandex.ru/siteinfo/?site=https://www.strexpit.ru"><img width="88" height="31" alt="" border="0" border-radius="8" src="https://yandex.ru/cycounter?https://www.strexpit.ru&theme=light&lang=ru"/></a>
     </footer>
 
-    <!-- Контейнер для "звёзд" -->
     <div class="stars-container" id="stars-container"></div>
-
-    <!-- СКРИПТЫ — тоже скопируй с главной страницы -->
     <script>
-      function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('open');
-      }
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
+        }
     </script>
     <script>
-      // звёзды и т.д. (копируешь с главной страницы)
-      // ...
+        const starsContainer = document.getElementById('stars-container');
+        const NUM_STARS = 80;
+        for (let i = 0; i < NUM_STARS; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            const randomLeft = Math.random() * 100;
+            const randomTop  = Math.random() * 150;
+            star.style.left = randomLeft + '%';
+            star.style.top  = randomTop + '%';
+            const duration = (2 + Math.random() * 3).toFixed(2) + 's';
+            const delay    = (Math.random() * 2).toFixed(2) + 's';
+            star.style.animationDuration = duration;
+            star.style.animationDelay    = delay;
+            starsContainer.appendChild(star);
+        }
+        window.addEventListener('scroll', () => {
+            const offset = window.scrollY * 0.2;
+            starsContainer.style.transform = `translateY(${-offset}px)`;
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    const target = document.querySelector(this.getAttribute("href"));
+                    if (target) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 50,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
