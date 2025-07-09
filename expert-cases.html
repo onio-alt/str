@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Экспертные кейсы | StrexpIT.ru</title>
+    <meta name="description" content="Примеры проведённых судебных и внесудебных компьютерно-технических экспертиз от StrexpIT.ru — реальные кейсы, выдержки из заключений, типовые задачи и пути их решения."/>
+    <meta name="keywords" content="экспертиза, судебная экспертиза, примеры экспертиз, компьютерно-техническая экспертиза, кейсы, StrexpIT"/>
+    <!-- Favicons и стили - как в index.html -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <!-- Скопируйте ваш <style> сюда или подключите CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Экспертные кейсы</h1>
+    <p>Реальные примеры проведённых экспертиз и выдержки из заключений</p>
+</header>
+
+<nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links">
+        <a href="index.html">ГЛАВНАЯ</a>
+        <a href="uslugi.html">УСЛУГИ</a>
+        <a href="index.html#research-section">ИССЛЕДОВАНИЯ</a>
+        <a href="otzyvy.html">ОТЗЫВЫ</a>
+        <a href="expert-cases.html">ПРИМЕРЫ ЭКСПЕРТИЗ</a>
+        <a href="#contacts">КОНТАКТЫ</a>
+    </div>
+</nav>
+
+<div class="banner glass-container">
+    <h2>Ваша уверенность — наш опыт</h2>
+    <p class="highlight">В этом разделе собраны выдержки из реальных заключений и типовые экспертные задачи</p>
+    <a href="#add-case" class="btn">Связаться по экспертизе</a>
+</div>
+
+<div class="container">
+    <!-- Пример карточки кейса -->
+    <div class="card">
+        <div class="content">
+            <h3>Пример 1: Анализ IP-адресов при споре о доступе</h3>
+            <p>
+                В ходе компьютерно-технической экспертизы было установлено совпадение IP-адресов пользователей в спорных транзакциях, что позволило выявить факт несанкционированного доступа к учетной записи. Анализ проведён по логам и сопоставлению данных интернет-провайдеров.
+            </p>
+            <small>Дата заключения: 05.07.2024</small>
+        </div>
+    </div>
+    <!-- Копируйте этот блок для каждого нового примера -->
+    <div class="card">
+        <div class="content">
+            <h3>Пример 2: Восстановление удалённых файлов</h3>
+            <p>
+                В результате исследования были обнаружены и восстановлены удалённые документы, подтверждающие факт передачи служебной информации третьим лицам. Экспертиза выполнена с использованием специализированного ПО FTK и Axiom.
+            </p>
+            <small>Дата заключения: 23.06.2024</small>
+        </div>
+    </div>
+    <!-- ...добавляйте новые кейсы... -->
+</div>
+
+<div class="help-section container glass-container">
+    <div>
+        <ul>
+            <li>НЕ ЗНАЕТЕ, КАК СФОРМУЛИРОВАТЬ ВОПРОСЫ ДЛЯ ЭКСПЕРТИЗЫ?</li>
+            <li>СОМНЕВАЕТЕСЬ В РЕЗУЛЬТАТАХ ЭКСПЕРТИЗЫ?</li>
+            <li>НУЖНА ПОМОЩЬ В ОЦЕНКЕ ЗАКЛЮЧЕНИЯ ОППОНЕНТОВ?</li>
+        </ul>
+        <h2>НАШИ СПЕЦИАЛИСТЫ ВАМ ПОМОГУТ!</h2>
+    </div>
+    <img src="images/spec.png" alt="Специалист" style="width: 400px; height: auto;" />
+</div>
+
+<div id="add-case" class="contact-form">
+    <h2>Задать вопрос эксперту</h2>
+    <form action="https://formspree.io/f/xeoopgld" method="POST">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Ваш вопрос или описание задачи:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+<footer id="contacts" style="background: #000; color: #fff; padding: 50px 20px; text-align: center; margin-top: 20px;">
+    <div style="display: flex; justify-content: space-around; align-items: start; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+        <div>
+            <h3 style="font-size: 2rem; font-weight: bold;">StrexpIT.ru</h3>
+            <p style="font-size: 1.2rem; color: #4CAF50;">Круглосуточно 24/7</p>
+        </div>
+        <div>
+            <h4>Контакты</h4>
+            <p>Телефон: <a href="tel:+79266100903" style="color: #32CD32;">+7 926 610 09 03</a></p>
+            <p>Почта: <a href="mailto:rstrelkov@inbox.ru" style="color: #32CD32;">rstrelkov@inbox.ru</a></p>
+        </div>
+        <div>
+            <h4>Мессенджеры</h4>
+            <div style="display: flex; gap: 20px;">
+                <a href="https://t.me/IT_Expert_strexpit" target="_blank" style="color: #32CD32;"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 40px;"> Telegram</a>
+                <a href="https://wa.me/79266100903" target="_blank" style="color: #32CD32;"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 40px;"> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 30px;">&copy; 2015 StrexpIT.ru. Все права защищены.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('open');
+    }
+</script>
+</body>
+</html>
+
