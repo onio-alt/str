@@ -132,24 +132,29 @@
             transform: translateY(1px);
             box-shadow: 0 3px 6px rgba(0,0,0,0.2);
         }
-        /* ----- ОТЗЫВЫ СЛАЙДЕР ----- */
-        .reviews-slider-outer {
-            max-width: 500px;
+        /* ----- ОТЗЫВЫ СЕТКА ----- */
+        .reviews-grid-outer {
+            max-width: 1100px;
             margin: 40px auto 30px auto;
-            position: relative;
             background: #fff;
             border-radius: 18px;
             box-shadow: 0 6px 32px 0 rgba(30,60,90,0.08);
             padding: 40px 18px 28px 18px;
-            min-height: 280px;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
         }
         .review-card {
+            background: #f6faff;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(30,60,90,0.06);
+            padding: 28px 20px 18px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 10px 10px 0 10px;
-            background: transparent;
         }
         .review-card .avatar {
             width: 68px;
@@ -184,11 +189,12 @@
             color: #223;
             margin-bottom: 8px;
         }
-        @media (max-width:600px) {
-            .reviews-slider-outer { padding: 25px 5px 18px 5px; max-width:97vw;}
+        @media (max-width:700px) {
+            .reviews-grid-outer { padding: 25px 5px 18px 5px; max-width:97vw;}
             .review-card .avatar {width:54px; height:54px;}
+            .reviews-grid {gap:15px;}
         }
-        /* ----- КОНЕЦ СЛАЙДЕРА ----- */
+        /* ----- КОНЕЦ ОТЗЫВОВ ----- */
         .help-section {
             display: flex; flex-direction: row; align-items: center; gap: 20px;
             max-width: 1200px; margin: 40px auto; padding: 20px;
@@ -248,12 +254,12 @@
             width: 2px; height: 2px;
             border-radius: 50%;
             background: #fff;
-            opacity: 0.7;
+            opacity: 0.85;
             animation: flicker 4s infinite ease-in-out;
         }
         @keyframes flicker {
-            0%,100%{opacity:.7;}
-            40%{opacity:.15;}
+            0%,100%{opacity:.85;}
+            40%{opacity:.2;}
         }
     </style>
 </head>
@@ -281,9 +287,87 @@
         <p>Высококачественные услуги компьютерно-технической экспертизы для юридических и физических лиц.</p>
         <a href="#contact" class="btn">Связаться с нами</a>
     </div>
-    <!-- Автоматический слайдер отзывов -->
-    <div class="reviews-slider-outer">
-        <div id="reviews-slider-track"></div>
+    <!-- Отзывы: сетка -->
+    <div class="reviews-grid-outer">
+      <div class="reviews-grid">
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/50.jpg" alt="Мария Петрова">
+          <div class="name">Мария Петрова</div>
+          <div class="date">07.01.2024</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Обратилась для независимой экспертизы документов. Получила развёрнутый и понятный отчёт, подробное объяснение каждой детали, а главное — уверенность в своей позиции. Большое спасибо за профессионализм и терпение!</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/12.jpg" alt="Алексей Фомин">
+          <div class="name">Алексей Фомин</div>
+          <div class="date">18.06.2024</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Решил заказать экспертизу ноутбука после подозрения на удалённый доступ. Эксперты подробно объяснили каждый шаг, предоставили рекомендации по защите данных, а главное — быстро нашли источник проблемы.</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Динара Магомедова">
+          <div class="name">Динара Магомедова</div>
+          <div class="date">12.03.2016</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Огромная благодарность специалистам StrexpIT за внимательное отношение! Работу выполнили очень быстро, учли все пожелания. Теперь рекомендую только вас!</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/9.jpg" alt="Иван Смирнов">
+          <div class="name">Иван Смирнов</div>
+          <div class="date">05.07.2019</div>
+          <div class="stars"><span style="color:#FFB800">★★★★</span><span style="color:#EEE">★</span></div>
+          <div class="text">Спасибо за качественную экспертизу цифровых доказательств. Благодаря заключению выиграли дело. Желаю дальнейших успехов!</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/39.jpg" alt="Анна Шевченко">
+          <div class="name">Анна Шевченко</div>
+          <div class="date">22.04.2023</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Заказывала проверку переписки и анализ удалённых файлов. Результат впечатлил — предоставили не только выводы, но и пояснения простым языком. Всё прозрачно и честно!</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/35.jpg" alt="Исмаил Абдуллаев">
+          <div class="name">Исмаил Абдуллаев</div>
+          <div class="date">22.11.2021</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Очень оперативно и качественно! Нашли уязвимость, которую другие не заметили. После экспертизы наконец перестал беспокоиться за безопасность в офисе.</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/24.jpg" alt="Ольга Иванова">
+          <div class="name">Ольга Иванова</div>
+          <div class="date">14.02.2018</div>
+          <div class="stars"><span style="color:#FFB800">★★★★</span><span style="color:#EEE">★</span></div>
+          <div class="text">Обратилась за консультацией по удалению вредоносного ПО. Понравилось человеческое отношение, спокойное объяснение и подробные инструкции. Советую!</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/26.jpg" alt="Муслим Гаджиев">
+          <div class="name">Муслим Гаджиев</div>
+          <div class="date">30.08.2020</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Действительно специалисты своего дела! Сделали заключение для суда быстро, подробно расписали каждый шаг. Документы приняли без вопросов.</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/42.jpg" alt="Рамазан Алиев">
+          <div class="name">Рамазан Алиев</div>
+          <div class="date">20.05.2015</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Обратился с вопросами по кибербезопасности. Отличная консультация, все по делу. Решили проблему за вечер и больше не возникало!</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/36.jpg" alt="Анна Сидорова">
+          <div class="name">Анна Сидорова</div>
+          <div class="date">16.10.2022</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">Очень довольна вашей работой. Прекрасный сервис, всё объяснили доступным языком. Особое спасибо эксперту Владимиру!</div>
+        </div>
+        <div class="review-card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/7.jpg" alt="Дмитрий Павлов">
+          <div class="name">Дмитрий Павлов</div>
+          <div class="date">25.12.2021</div>
+          <div class="stars"><span style="color:#FFB800">★★★★</span><span style="color:#EEE">★</span></div>
+          <div class="text">Спасибо за помощь! Сделали всё быстро и профессионально. Единственный минус — задержка с отчётом на один день.</div>
+        </div>
+      </div>
     </div>
     <!-- Блок помощи -->
     <div class="help-section container glass-container">
@@ -347,87 +431,39 @@
             &copy; 2015 StrexpIT.ru. Все права защищены.
         </p>
     </footer>
+    <!-- Фоновая анимация звезд -->
     <div class="stars-container" id="stars-container"></div>
-    <!-- СКРИПТЫ: отзывы, меню, звёзды -->
     <script>
-        // ОТЗЫВЫ (только 1 карточка в DOM)
-        const reviews = [
-            {name:"Мария Петрова",date:"07.01.2024",avatar:"https://randomuser.me/api/portraits/women/50.jpg",stars:5,text:"Обратилась для независимой экспертизы документов. Получила развёрнутый и понятный отчёт, подробное объяснение каждой детали, а главное — уверенность в своей позиции. Большое спасибо за профессионализм и терпение!"},
-            {name:"Алексей Фомин",date:"18.06.2024",avatar:"https://randomuser.me/api/portraits/men/12.jpg",stars:5,text:"Решил заказать экспертизу ноутбука после подозрения на удалённый доступ. Эксперты подробно объяснили каждый шаг, предоставили рекомендации по защите данных, а главное — быстро нашли источник проблемы."},
-            {name:"Динара Магомедова",date:"12.03.2016",avatar:"https://randomuser.me/api/portraits/women/45.jpg",stars:5,text:"Огромная благодарность специалистам StrexpIT за внимательное отношение! Работу выполнили очень быстро, учли все пожелания. Теперь рекомендую только вас!"},
-            {name:"Иван Смирнов",date:"05.07.2019",avatar:"https://randomuser.me/api/portraits/men/9.jpg",stars:4,text:"Спасибо за качественную экспертизу цифровых доказательств. Благодаря заключению выиграли дело. Желаю дальнейших успехов!"},
-            {name:"Анна Шевченко",date:"22.04.2023",avatar:"https://randomuser.me/api/portraits/women/39.jpg",stars:5,text:"Заказывала проверку переписки и анализ удалённых файлов. Результат впечатлил — предоставили не только выводы, но и пояснения простым языком. Всё прозрачно и честно!"},
-            {name:"Исмаил Абдуллаев",date:"22.11.2021",avatar:"https://randomuser.me/api/portraits/men/35.jpg",stars:5,text:"Очень оперативно и качественно! Нашли уязвимость, которую другие не заметили. После экспертизы наконец перестал беспокоиться за безопасность в офисе."},
-            {name:"Ольга Иванова",date:"14.02.2018",avatar:"https://randomuser.me/api/portraits/women/24.jpg",stars:4,text:"Обратилась за консультацией по удалению вредоносного ПО. Понравилось человеческое отношение, спокойное объяснение и подробные инструкции. Советую!"},
-            {name:"Муслим Гаджиев",date:"30.08.2020",avatar:"https://randomuser.me/api/portraits/men/26.jpg",stars:5,text:"Действительно специалисты своего дела! Сделали заключение для суда быстро, подробно расписали каждый шаг. Документы приняли без вопросов."},
-            {name:"Рамазан Алиев",date:"20.05.2015",avatar:"https://randomuser.me/api/portraits/men/42.jpg",stars:5,text:"Обратился с вопросами по кибербезопасности. Отличная консультация, все по делу. Решили проблему за вечер и больше не возникало!"},
-            {name:"Анна Сидорова",date:"16.10.2022",avatar:"https://randomuser.me/api/portraits/women/36.jpg",stars:5,text:"Очень довольна вашей работой. Прекрасный сервис, всё объяснили доступным языком. Особое спасибо эксперту Владимиру!"},
-            {name:"Дмитрий Павлов",date:"25.12.2021",avatar:"https://randomuser.me/api/portraits/men/7.jpg",stars:4,text:"Спасибо за помощь! Сделали всё быстро и профессионально. Единственный минус — задержка с отчётом на один день."}
-        ];
-        const reviewsTrack = document.getElementById('reviews-slider-track');
-        let current = 0, timer;
-        function renderReview(idx) {
-            const r = reviews[idx];
-            reviewsTrack.innerHTML = `
-                <div class="review-card">
-                    <img class="avatar" src="${r.avatar}" alt="${r.name}">
-                    <div class="name">${r.name}</div>
-                    <div class="date">${r.date}</div>
-                    <div class="stars">${'★'.repeat(r.stars)}${r.stars < 5 ? '<span style="color:#EEE">' + '★'.repeat(5 - r.stars) + '</span>' : ''}</div>
-                    <div class="text">${r.text}</div>
-                </div>
-            `;
-        }
-        function goTo(idx, auto=false) {
-            current = (idx + reviews.length) % reviews.length;
-            renderReview(current);
-            if (!auto) resetTimer();
-        }
-        function next() { goTo(current + 1, true); }
-        function resetTimer() {
-            clearInterval(timer);
-            timer = setInterval(next, 5200);
-        }
-        renderReview(0);
-        resetTimer();
-        // swipe (для мобильных)
-        let touchStartX = null;
-        reviewsTrack.addEventListener('touchstart', function(e){
-            touchStartX = e.touches[0].clientX;
-        }, {passive: true});
-        reviewsTrack.addEventListener('touchend', function(e){
-            if (touchStartX === null) return;
-            let dx = e.changedTouches[0].clientX - touchStartX;
-            if (dx < -40) next();
-            else if (dx > 40) goTo(current - 1, true);
-            touchStartX = null;
-        }, {passive: true});
+      // Фоновая анимация "звёзд"
+      const starsContainer = document.getElementById('stars-container');
+      const NUM_STARS = 50; // уменьшено ради оптимизации
+      for (let i = 0; i < NUM_STARS; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const randomLeft = Math.random() * 100;
+        const randomTop  = Math.random() * 150;
+        star.style.left = randomLeft + '%';
+        star.style.top  = randomTop + '%';
+        const duration = (2 + Math.random() * 3).toFixed(2) + 's';
+        const delay    = (Math.random() * 2).toFixed(2) + 's';
+        star.style.animationDuration = duration;
+        star.style.animationDelay    = delay;
+        starsContainer.appendChild(star);
+      }
+      window.addEventListener('scroll', () => {
+        const offset = window.scrollY * 0.13;
+        starsContainer.style.transform = `translateY(${-offset}px)`;
+      });
     </script>
     <script>
-        // Фоновая анимация "звёзд" (оптимизировано)
-        const starsContainer = document.getElementById('stars-container');
-        const NUM_STARS = 35;
-        for (let i = 0; i < NUM_STARS; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = (Math.random() * 100) + '%';
-            star.style.top  = (Math.random() * 100) + '%';
-            star.style.animationDuration = (2.5 + Math.random() * 2.7).toFixed(2) + 's';
-            star.style.animationDelay    = (Math.random() * 2).toFixed(2) + 's';
-            starsContainer.appendChild(star);
-        }
-        window.addEventListener('scroll', () => {
-            const offset = window.scrollY * 0.18;
-            starsContainer.style.transform = `translateY(${-offset}px)`;
-        });
-    </script>
-    <script>
+      // Гамбургер-меню
       function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('open');
       }
     </script>
     <script>
+        // Плавный скролл по якорям
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener("click", function (e) {
