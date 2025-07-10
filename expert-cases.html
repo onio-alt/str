@@ -26,7 +26,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100vw;
+            max-width: 100vw;
+            overflow-x: hidden !important;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             background:
@@ -36,6 +40,7 @@
             background-blend-mode: lighten;
             color: #333;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         .highlight {
             margin-top: 10px;
             font-weight: bold;
@@ -53,6 +58,8 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-bottom: 3px solid #0047AB;
+            width: 100vw;
+            max-width: 100vw;
         }
         header h1 {
             font-size: 2.5em;
@@ -70,6 +77,9 @@
             justify-content: center;
             align-items: center;
             padding: 10px;
+            width: 100vw;
+            max-width: 100vw;
+            overflow-x: hidden;
         }
         .nav-links {
             display: flex;
@@ -95,25 +105,12 @@
         }
         .menu-toggle { display: none; margin-left: auto; font-size: 1.5rem; color: #333; cursor: pointer; }
         .nav-links.open { flex-direction: column; align-items: center; margin-top: 10px; }
-
-        /* ---- МОБИЛЬНЫЕ СТИЛИ ---- */
-        @media (max-width: 900px) {
-            .banner { padding: 25px 6vw !important; }
-        }
         @media (max-width: 800px) {
             nav { justify-content: space-between; padding: 10px 10px; }
             .menu-toggle { display: block; color: #fff; }
-            .nav-links { display: none; width: 100%; }
+            .nav-links { display: none; width: 100vw; }
             .nav-links.open { display: flex; }
             .nav-links.open a { width: 100vw; text-align: center; margin: 5px 0; }
-        }
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.35em; }
-            .banner h2 { font-size: 1.08em; }
-            .help-section h2 { font-size: 1.08em; }
-            .container h2 { font-size: 1.1em; }
-            .card h3 { font-size: 1em; }
-            .contact-form h2 { font-size: 1.1em; }
         }
         .banner {
             text-align: center;
@@ -130,6 +127,8 @@
             align-items: center;
             gap: 15px;
             max-width: 1200px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .banner h2 { font-size: 2em; margin-bottom: 20px; color: #1B263B; }
         .btn {
@@ -162,6 +161,8 @@
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
         .container h2 { font-size: 2rem; margin-bottom: 20px; color: #333; }
         .cards-section {
@@ -171,6 +172,8 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
         }
         .card {
             background: #fff;
@@ -182,6 +185,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
             margin-bottom: 20px;
             text-align: left;
+            max-width: 95vw;
         }
         .card:hover {
             transform: scale(1.03);
@@ -191,7 +195,6 @@
         .card h3 { margin-bottom: 10px; font-weight: 700; color: #1B263B; }
         .card p { font-size: 1rem; line-height: 1.4; }
         .card small { display: block; margin-top: 10px; color: #777; }
-        /* Блок помощи */
         .help-section {
             display: flex;
             flex-direction: row;
@@ -202,11 +205,14 @@
             padding: 20px;
             border-radius: 10px;
             text-align: left;
+            width: 100%;
+            box-sizing: border-box;
         }
         .help-section img {
             width: 280px;
             border-radius: 8px;
             object-fit: cover;
+            max-width: 100vw;
         }
         .help-section ul {
             margin-bottom: 20px;
@@ -241,6 +247,8 @@
             border-radius: 10px;
             background: #F5FFFA;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            box-sizing: border-box;
         }
         .contact-form h2 {
             text-align: center;
@@ -279,18 +287,19 @@
             padding: 50px 20px;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
             margin-top: 20px;
-            width: 100%;
+            width: 100vw;
             left: 0;
             position: relative;
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
         footer a { color: #32CD32; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
-        /* Звёзды */
         .stars-container {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 100vw;
             height: 100%;
             pointer-events: none;
             overflow: hidden;
@@ -356,7 +365,6 @@
                     <small>Дата заключения: 23.06.2024</small>
                 </div>
             </div>
-            <!-- Добавь новые кейсы по аналогии -->
         </div>
     </div>
 
