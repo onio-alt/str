@@ -141,16 +141,9 @@
             border-radius: 18px;
             box-shadow: 0 6px 32px 0 rgba(30,60,90,0.08);
             padding: 40px 18px 28px 18px;
-        }
-        .reviews-slider-track {
-            display: flex;
-            transition: transform 0.7s cubic-bezier(.4,1.2,.5,1);
-            will-change: transform;
+            min-height: 280px;
         }
         .review-card {
-            flex: 0 0 100%;
-            max-width: 100%;
-            min-width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -255,12 +248,12 @@
             width: 2px; height: 2px;
             border-radius: 50%;
             background: #fff;
-            opacity: 0.85;
+            opacity: 0.7;
             animation: flicker 4s infinite ease-in-out;
         }
         @keyframes flicker {
-            0%,100%{opacity:.85;}
-            40%{opacity:.2;}
+            0%,100%{opacity:.7;}
+            40%{opacity:.15;}
         }
     </style>
 </head>
@@ -290,7 +283,7 @@
     </div>
     <!-- Автоматический слайдер отзывов -->
     <div class="reviews-slider-outer">
-        <div id="reviews-slider-track" class="reviews-slider-track"></div>
+        <div id="reviews-slider-track"></div>
     </div>
     <!-- Блок помощи -->
     <div class="help-section container glass-container">
@@ -357,7 +350,7 @@
     <div class="stars-container" id="stars-container"></div>
     <!-- СКРИПТЫ: отзывы, меню, звёзды -->
     <script>
-        // Слайдер отзывов
+        // ОТЗЫВЫ (только 1 карточка в DOM)
         const reviews = [
             {name:"Мария Петрова",date:"07.01.2024",avatar:"https://randomuser.me/api/portraits/women/50.jpg",stars:5,text:"Обратилась для независимой экспертизы документов. Получила развёрнутый и понятный отчёт, подробное объяснение каждой детали, а главное — уверенность в своей позиции. Большое спасибо за профессионализм и терпение!"},
             {name:"Алексей Фомин",date:"18.06.2024",avatar:"https://randomuser.me/api/portraits/men/12.jpg",stars:5,text:"Решил заказать экспертизу ноутбука после подозрения на удалённый доступ. Эксперты подробно объяснили каждый шаг, предоставили рекомендации по защите данных, а главное — быстро нашли источник проблемы."},
@@ -372,9 +365,10 @@
             {name:"Дмитрий Павлов",date:"25.12.2021",avatar:"https://randomuser.me/api/portraits/men/7.jpg",stars:4,text:"Спасибо за помощь! Сделали всё быстро и профессионально. Единственный минус — задержка с отчётом на один день."}
         ];
         const reviewsTrack = document.getElementById('reviews-slider-track');
-        let current = 0, timer, isTransitioning = false;
-        function renderReviews() {
-            reviewsTrack.innerHTML = reviews.map(r => `
+        let current = 0, timer;
+        function renderReview(idx) {
+            const r = reviews[idx];
+            reviewsTrack.innerHTML = `
                 <div class="review-card">
                     <img class="avatar" src="${r.avatar}" alt="${r.name}">
                     <div class="name">${r.name}</div>
@@ -382,24 +376,20 @@
                     <div class="stars">${'★'.repeat(r.stars)}${r.stars < 5 ? '<span style="color:#EEE">' + '★'.repeat(5 - r.stars) + '</span>' : ''}</div>
                     <div class="text">${r.text}</div>
                 </div>
-            `).join('');
+            `;
         }
-        renderReviews();
         function goTo(idx, auto=false) {
-            if (isTransitioning) return;
             current = (idx + reviews.length) % reviews.length;
-            reviewsTrack.style.transform = `translateX(-${current * 100}%)`;
-            isTransitioning = true;
-            setTimeout(()=>isTransitioning=false, 600);
-            if (!auto) { resetTimer(); }
+            renderReview(current);
+            if (!auto) resetTimer();
         }
         function next() { goTo(current + 1, true); }
         function resetTimer() {
             clearInterval(timer);
-            timer = setInterval(()=>next(), 5400);
+            timer = setInterval(next, 5200);
         }
+        renderReview(0);
         resetTimer();
-        goTo(0, true);
         // swipe (для мобильных)
         let touchStartX = null;
         reviewsTrack.addEventListener('touchstart', function(e){
@@ -414,20 +404,16 @@
         }, {passive: true});
     </script>
     <script>
-        // Фоновая анимация "звёзд"
+        // Фоновая анимация "звёзд" (оптимизировано)
         const starsContainer = document.getElementById('stars-container');
-        const NUM_STARS = 80;
+        const NUM_STARS = 35;
         for (let i = 0; i < NUM_STARS; i++) {
             const star = document.createElement('div');
             star.classList.add('star');
-            const randomLeft = Math.random() * 100;
-            const randomTop  = Math.random() * 150;
-            star.style.left = randomLeft + '%';
-            star.style.top  = randomTop + '%';
-            const duration = (2 + Math.random() * 3).toFixed(2) + 's';
-            const delay    = (Math.random() * 2).toFixed(2) + 's';
-            star.style.animationDuration = duration;
-            star.style.animationDelay    = delay;
+            star.style.left = (Math.random() * 100) + '%';
+            star.style.top  = (Math.random() * 100) + '%';
+            star.style.animationDuration = (2.5 + Math.random() * 2.7).toFixed(2) + 's';
+            star.style.animationDelay    = (Math.random() * 2).toFixed(2) + 's';
             starsContainer.appendChild(star);
         }
         window.addEventListener('scroll', () => {
