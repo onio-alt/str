@@ -270,17 +270,20 @@
         <p>Реальные истории от тех, кто уже воспользовался нашими услугами</p>
     </header>
     <!-- Навигация с иконкой-бургер -->
-    <nav>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="nav-links">
-            <a href="index.html">ГЛАВНАЯ</a>
-            <a href="uslugi.html">УСЛУГИ</a>
-            <a href="index.html#research-section">ИССЛЕДОВАНИЯ</a>
-            <a href="otzyvy.html">ОТЗЫВЫ</a>
-            <a href="expert-cases.html">АРХИВ ЭКСПЕРТНЫХ ЗАКЛЮЧЕНИЙ</a>
-            <a href="#contacts">КОНТАКТЫ</a>
-        </div>
-    </nav>
+   <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Гамбургер -->
+    <div class="nav-links">
+        <a href="index.html">ГЛАВНАЯ</a>
+        <a href="uslugi.html">УСЛУГИ</a>
+        <a href="prices.html">ЦЕНЫ</a>
+        <a href="other-expertise.html">ДОПОЛНИТЕЛЬНЫЕ ЭКСПЕРТИЗЫ</a>
+        <a href="#research-section">ИССЛЕДОВАНИЯ</a> <!-- Секция на главной -->
+        <a href="otzyvy.html">ОТЗЫВЫ</a>
+        <a href="expert-cases.html">АРХИВ ЭКСПЕРТНЫХ ЗАКЛЮЧЕНИЙ</a>
+        <a href="#contacts">КОНТАКТЫ</a>
+    </div>
+</nav>
+
     <!-- Баннер -->
     <div class="banner glass-container">
         <h2>Закажите экспертизу прямо сейчас</h2>
@@ -384,53 +387,89 @@
     <!-- Форма обратной связи -->
     <div id="contact" class="contact-form">
         <h2>Обратная связь</h2>
-        <form action="https://formspree.io/f/xeoopgld" method="POST">
-            <label for="name">Ваше имя:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Ваш email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Ваше сообщение:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <button type="submit">Отправить</button>
-        </form>
+          <form action="https://formspree.io/f/xeoopgld" method="POST">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Ваше сообщение:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <label class="consent-label">
+            <input type="checkbox" name="consent" required style="margin-right: 8px;">
+            Я даю согласие на обработку своих персональных данных и подтверждаю,
+            что ознакомлен(а) с
+            <a href="privacy.html" target="_blank">Политикой обработки персональных данных</a>.
+        </label>
+
+        <button type="submit">Отправить</button>
+    </form>
+
     </div>
-    <footer id="contacts" style="background: #000000; padding: 50px 20px; text-align: center; width: 100%; position: relative; left: 0;">
-        <div style="display: flex; justify-content: space-around; align-items: start; flex-wrap: wrap; margin: 0 auto; max-width: 1200px; color: #FFFFFF;">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <h3 style="font-size: 2rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">
-                    StrexpIT.ru
-                </h3>
-                <p style="font-size: 1.5rem; color: #4CAF50; font-weight: bold;">Круглосуточно 24/7</p>
-            </div>
-            <div style="text-align: left; margin-bottom: 20px;">
-                <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Контакты</h4>
-                <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
-                    Телефон: 
-                    <a href="tel:+79266100903" style="color: #32CD32; text-decoration: none;">+7 926 610 09 03</a>
-                </p>
-                <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
-                    Почта: 
-                    <a href="mailto:rstrelkov@inbox.ru" style="color: #32CD32; text-decoration: none;">rstrelkov@inbox.ru</a>
-                </p>
-            </div>
-            <div style="text-align: left; margin-bottom: 20px;">
-                <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Мессенджеры</h4>
-                <div style="display: flex; gap: 20px; align-items: center;">
-                    <a href="https://t.me/IT_Expert_strexpit" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold; color: #32CD32;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 40px; vertical-align: middle;">
-                        Telegram
-                    </a>
-                    <a href="https://wa.me/79266100903" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold; color: #32CD32;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 40px; vertical-align: middle;">
-                        WhatsApp
-                    </a>
-                </div>
+   <footer id="contacts" style="background: #000000; padding: 50px 20px; text-align: center; width: 100%; position: relative; left: 0;">
+    <div style="display: flex; justify-content: space-around; align-items: start; flex-wrap: wrap; margin: 0 auto; max-width: 1200px; color: #FFFFFF;">
+        <!-- Название сайта -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h3 style="font-size: 2rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">
+                StrexpIT.ru
+            </h3>
+            <p style="font-size: 1.5rem; color: #4CAF50; font-weight: bold;">Круглосуточно 24/7</p>
+        </div>
+
+        <!-- Контакты -->
+        <div style="text-align: left; margin-bottom: 20px;">
+            <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Контакты</h4>
+            <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
+                Телефон: 
+                <a href="tel:+79266100903" style="color: #32CD32; text-decoration: none;">+7 926 610 09 03</a>
+            </p>
+            <p style="margin: 10px 0; font-size: 1.5rem; color: #FFFFFF; font-weight: bold;">
+                Почта: 
+                <a href="mailto:rstrelkov@inbox.ru" style="color: #32CD32; text-decoration: none;">rstrelkov@inbox.ru</a>
+            </p>
+        </div>
+
+        <!-- Ссылки на мессенджеры -->
+        <div style="text-align: left; margin-bottom: 20px;">
+            <h4 style="font-size: 1.8rem; color: #FFFFFF; font-weight: bold; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);">Мессенджеры</h4>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <a href="https://t.me/IT_Expert_strexpit" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold; color: #32CD32;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width: 40px; vertical-align: middle;">
+                    Telegram
+                </a>
+                <a href="https://wa.me/79266100903" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold; color: #32CD32;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 40px; vertical-align: middle;">
+                    WhatsApp
+                </a>
             </div>
         </div>
-        <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 30px; text-shadow: none;">
-            &copy; 2015 StrexpIT.ru. Все права защищены.
-        </p>
-    </footer>
+    </div>
+
+    <!-- Реквизиты юрлица мелким шрифтом -->
+        <p style="font-size: 0.75rem; color: #AAAAAA; margin-top: 20px; text-shadow: none;">
+        ИП Стрелков Родион Александрович, ИНН 091706875564, ОГРНИП 325010000032740
+    </p>
+
+    <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 10px; text-shadow: none;">
+        &copy; 2015 StrexpIT.ru. Все права защищены.
+    </p>
+
+    <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 5px; text-shadow: none;">
+        <a href="privacy.html" style="color: #32CD32; text-decoration: underline;">
+            Политика обработки персональных данных
+        </a>
+    </p>
+
+    <a href="https://webmaster.yandex.ru/siteinfo/?site=https://www.strexpit.ru">
+        <img width="88" height="31" alt="" border="0" border-radius="8"
+             src="https://yandex.ru/cycounter?https://www.strexpit.ru&theme=light&lang=ru"/>
+    </a>
+</footer>
+
+
+
     <!-- Фоновая анимация звезд -->
     <div class="stars-container" id="stars-container"></div>
     <script>
