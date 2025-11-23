@@ -1217,18 +1217,19 @@ nav {
 
    <!-- Навигация с иконкой-бургер -->
  <nav>
-    <!-- Иконка-гамбургер -->
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <!-- Ссылки меню -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Гамбургер -->
     <div class="nav-links">
         <a href="index.html">ГЛАВНАЯ</a>
         <a href="uslugi.html">УСЛУГИ</a>
-	<a href="index.html#research-section">ИССЛЕДОВАНИЯ</a> <!-- Исправленная ссылка -->
+        <a href="prices.html">ЦЕНЫ</a>
+        <a href="other-expertise.html">ДОПОЛНИТЕЛЬНЫЕ ЭКСПЕРТИЗЫ</a>
+        <a href="#research-section">ИССЛЕДОВАНИЯ</a> <!-- Секция на главной -->
         <a href="otzyvy.html">ОТЗЫВЫ</a>
-	<a href="expert-cases.html">АРХИВ ЭКСПЕРТНЫХ ЗАКЛЮЧЕНИЙ</a>
+        <a href="expert-cases.html">АРХИВ ЭКСПЕРТНЫХ ЗАКЛЮЧЕНИЙ</a>
         <a href="#contacts">КОНТАКТЫ</a>
     </div>
 </nav>
+
 
 	
 
@@ -1341,7 +1342,7 @@ nav {
     <!-- Форма обратной связи -->
   <div id="contact" class="contact-form">
     <h2>Обратная связь</h2>
-    <form action="https://formspree.io/f/xeoopgld" method="POST">
+       <form action="https://formspree.io/f/xeoopgld" method="POST">
         <label for="name">Ваше имя:</label>
         <input type="text" id="name" name="name" required>
 
@@ -1351,8 +1352,16 @@ nav {
         <label for="message">Ваше сообщение:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
+        <label class="consent-label">
+            <input type="checkbox" name="consent" required style="margin-right: 8px;">
+            Я даю согласие на обработку своих персональных данных и подтверждаю,
+            что ознакомлен(а) с
+            <a href="privacy.html" target="_blank">Политикой обработки персональных данных</a>.
+        </label>
+
         <button type="submit">Отправить</button>
     </form>
+
 </div>
 
 <footer id="contacts" style="background: #000000; padding: 50px 20px; text-align: center; width: 100%; position: relative; left: 0;">
@@ -1393,10 +1402,29 @@ nav {
             </div>
         </div>
     </div>
-    <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 30px; text-shadow: none;">
+
+    <!-- Реквизиты юрлица мелким шрифтом -->
+        <p style="font-size: 0.75rem; color: #AAAAAA; margin-top: 20px; text-shadow: none;">
+        ИП Стрелков Родион Александрович, ИНН 091706875564, ОГРНИП 325010000032740
+    </p>
+
+    <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 10px; text-shadow: none;">
         &copy; 2015 StrexpIT.ru. Все права защищены.
     </p>
+
+    <p style="font-size: 0.8rem; color: #AAAAAA; margin-top: 5px; text-shadow: none;">
+        <a href="privacy.html" style="color: #32CD32; text-decoration: underline;">
+            Политика обработки персональных данных
+        </a>
+    </p>
+
+    <a href="https://webmaster.yandex.ru/siteinfo/?site=https://www.strexpit.ru">
+        <img width="88" height="31" alt="" border="0" border-radius="8"
+             src="https://yandex.ru/cycounter?https://www.strexpit.ru&theme=light&lang=ru"/>
+    </a>
 </footer>
+
+
 
 
 
