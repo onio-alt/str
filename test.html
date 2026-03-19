@@ -2,445 +2,74 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Депонирование на счёт эксперта</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Депонирование</title>
   <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #111827;
-      --accent-2: #2563eb;
-      --success: #0f9d58;
-      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
-      --radius: 20px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 35%, #f9fafb 100%);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-    }
-
     body {
-      min-height: 100vh;
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 18px 14px 24px;
-    }
-
-    .phone {
-      width: 100%;
-      max-width: 430px;
-    }
-
-    .topbar {
-      display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding: 4px 2px;
+      background: #f5f7fb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    .brand {
+    button {
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
       font-size: 18px;
       font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .badge {
-      font-size: 12px;
-      color: var(--success);
-      background: #ecfdf3;
-      border: 1px solid #ccebd7;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-weight: 600;
-    }
-
-    .sheet {
-      background: rgba(255,255,255,0.84);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.65);
-      box-shadow: var(--shadow);
-      border-radius: 28px;
-      overflow: hidden;
-    }
-
-    .hero {
-      padding: 18px;
-      background: radial-gradient(circle at top right, #dbeafe, transparent 40%), linear-gradient(180deg, #fff 0%, #f8fafc 100%);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .title {
-      margin: 0 0 6px;
-      font-size: 24px;
-      line-height: 1.15;
-      font-weight: 800;
-    }
-
-    .subtitle {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    .price-card {
-      margin-top: 14px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .muted { color: var(--muted); }
-    .strong { font-weight: 700; }
-
-    .content {
-      padding: 18px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .section-title {
-      font-size: 15px;
-      font-weight: 800;
-      margin: 0 0 6px;
-    }
-
-    .helper {
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
-    .quick-pay {
-      display: grid;
-      gap: 10px;
-    }
-
-    .pay-btn {
-      appearance: none;
       border: none;
-      width: 100%;
-      border-radius: 18px;
-      padding: 16px 18px;
-      font-size: 16px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
-    }
-
-    .pay-btn:active { transform: scale(0.985); }
-
-    .pay-main {
-      background: var(--accent);
+      border-radius: 20px;
+      background: #0f172a;
       color: white;
-      box-shadow: 0 10px 20px rgba(17,24,39,0.18);
+      cursor: pointer;
     }
 
-    .pay-alt {
-      background: white;
-      color: var(--text);
-      border: 1px solid var(--line);
+    button:active {
+      transform: scale(0.98);
     }
-
-    .apple-like {
-      background: #000;
-      color: #fff;
-      letter-spacing: 0.2px;
-    }
-
-    .hint {
-      background: #f8fafc;
-      border: 1px dashed #cbd5e1;
-      border-radius: 16px;
-      padding: 12px 14px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    form {
-      display: grid;
-      gap: 12px;
-    }
-
-    .field {
-      display: grid;
-      gap: 7px;
-    }
-
-    .field label {
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .input, select {
-      width: 100%;
-      border: 1px solid #d1d5db;
-      background: white;
-      border-radius: 16px;
-      padding: 14px 14px;
-      font-size: 16px;
-      outline: none;
-      transition: border-color .15s ease, box-shadow .15s ease;
-    }
-
-    .input:focus, select:focus {
-      border-color: #93c5fd;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .mini-note {
-      font-size: 12px;
-      line-height: 1.45;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .secure {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 2px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 10px 12px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .footer-space { height: 6px; }
-
-    .result {
-      display: none;
-      background: #ecfdf3;
-      color: #166534;
-      border: 1px solid #bbf7d0;
-      border-radius: 16px;
-      padding: 12px 14px;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .result.show { display: block; }
   </style>
 </head>
 <body>
-  <main class="phone">
-    <div class="topbar">
-      <div class="brand">Депонирование средств</div>
-      <div class="badge">Защищённая форма</div>
-    </div>
 
-    <section class="sheet">
-      <div class="hero">
-        <h1 class="title">Депонирование на счёт эксперта</h1>
-        <p class="subtitle">Мобильная страница депонирования с упором на автозаполнение сохранённой карты на iPhone и других мобильных устройствах.</p>
+<button id="payBtn">Депонировать</button>
 
-        <div class="price-card">
-          <div class="row">
-            <span class="muted">Услуга</span>
-            <span class="strong">Депонирование на счёт эксперта</span>
-          </div>
-          <div class="row">
-            <span class="muted">Сумма</span>
-            <span class="strong" id="priceLabel">15 000 ₽</span>
-          </div>
-        </div>
-      </div>
+<script>
+const amount = '15000.00';
 
-      <div class="content">
-        <div>
-          <h2 class="section-title">Быстрое депонирование</h2>
-          <p class="helper">На iPhone Safari может предложить сохранённую карту автоматически, если страница открыта по HTTPS и используются корректные платёжные поля. На поддерживаемых устройствах также можно открыть системное окно оплаты.</p>
-        </div>
+async function pay() {
+  if (!window.PaymentRequest) {
+    alert('Safari не поддерживает PaymentRequest. Нужно открывать через HTTPS и Safari');
+    return;
+  }
 
-        <div class="quick-pay">
-          <button class="pay-btn pay-main" id="helpBtn" type="button">Депонировать</button>
-          <button class="pay-btn apple-like" id="walletBtn" type="button">Оплатить через Apple Pay / системный кошелёк</button>
-        </div>
-
-        <div class="hint" id="walletHint">
-          Для iPhone: наибольший шанс автозаполнения появляется в Safari при открытии страницы по HTTPS. HTML не может принудительно показать сохранённые карты, но корректные поля <code>autocomplete="cc-*"</code> позволяют iOS предложить реальные сохранённые данные карты.
-        </div>
-
-        <div>
-          <h2 class="section-title">Депонирование картой</h2>
-          <p class="helper">Поля ниже настроены под реальное автозаполнение: имя владельца, номер карты, срок действия и код безопасности. На iPhone Safari сохранённая карта может подставляться автоматически из Wallet/сохранённых данных браузера.</p>
-        </div>
-
-        <form id="paymentForm" autocomplete="on">
-          <div class="field">
-            <label for="cardName">Имя владельца карты</label>
-            <input id="cardName" class="input" name="cc-name" type="text" inputmode="text" autocomplete="cc-name" placeholder="IVAN IVANOV" />
-          </div>
-
-          <div class="field">
-            <label for="cardNumber">Номер карты</label>
-            <input id="cardNumber" class="input" name="cc-number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="23" />
-          </div>
-
-          <div class="grid-2">
-            <div class="field">
-              <label for="expDate">Срок действия</label>
-              <input id="expDate" class="input" name="cc-exp" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" />
-            </div>
-            <div class="field">
-              <label for="cvv">CVV</label>
-              <input id="cvv" class="input" name="cc-csc" type="password" inputmode="numeric" autocomplete="cc-csc" placeholder="***" maxlength="4" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="email">E-mail для чека</label>
-            <input id="email" class="input" name="email" type="email" inputmode="email" autocomplete="email" placeholder="mail@example.com" />
-          </div>
-
-          <div class="row" style="justify-content:flex-start; gap:10px; flex-wrap:wrap;">
-            <span class="pill">💳 Автозаполнение включено</span>
-            <span class="pill">📱 Удобно для телефона</span>
-          </div>
-
-          <p class="mini-note">Важно: принудительно открыть список сохранённых карт через обычный HTML нельзя. Это решает сам браузер. Но корректные поля оплаты и кнопка системного кошелька дают максимальный шанс показать нужное предложение пользователю.</p>
-
-          <button class="pay-btn pay-alt" type="submit">Депонировать картой</button>
-
-          <div class="secure">🔒 Это фронтенд-макет с реальной поддержкой автозаполнения полей, но без подключения платёжного шлюза.</div>
-          <div class="result" id="resultBox"></div>
-        </form>
-
-        <div class="footer-space"></div>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    const amountValue = 15000.00;
-    const amountLabel = '15000.00';
-
-    const helpBtn = document.getElementById('helpBtn');
-    const walletBtn = document.getElementById('walletBtn');
-    const paymentForm = document.getElementById('paymentForm');
-    const resultBox = document.getElementById('resultBox');
-    const walletHint = document.getElementById('walletHint');
-
-    function showMessage(text, ok = true) {
-      resultBox.textContent = text;
-      resultBox.className = 'result show';
-      resultBox.style.background = ok ? '#ecfdf3' : '#fef2f2';
-      resultBox.style.color = ok ? '#166534' : '#991b1b';
-      resultBox.style.borderColor = ok ? '#bbf7d0' : '#fecaca';
-    }
-
-    function formatCardNumber(value) {
-      return value.replace(/\D/g, '').slice(0, 16).replace(/(.{4})/g, '$1 ').trim();
-    }
-
-    function formatExp(value) {
-      const digits = value.replace(/\D/g, '').slice(0, 4);
-      if (digits.length <= 2) return digits;
-      return digits.slice(0, 2) + '/' + digits.slice(2);
-    }
-
-    document.getElementById('cardNumber').addEventListener('input', (e) => {
-      e.target.value = formatCardNumber(e.target.value);
-    });
-
-    document.getElementById('expDate').addEventListener('input', (e) => {
-      e.target.value = formatExp(e.target.value);
-    });
-
-    async function openSystemPayment() {
-      if (!window.PaymentRequest) {
-        showMessage('На этом устройстве системная оплата не поддерживается. Используйте кнопку «Депонировать картой» и автозаполнение Safari/браузера.', false);
-        return;
+  try {
+    const request = new PaymentRequest(
+      [
+        { supportedMethods: 'https://apple.com/apple-pay' }
+      ],
+      {
+        total: {
+          label: 'Депонирование на счёт эксперта',
+          amount: { currency: 'RUB', value: amount }
+        }
       }
+    );
 
-      try {
-        const supportedMethods = [
-          { supportedMethods: 'https://apple.com/apple-pay' },
-          { supportedMethods: 'basic-card' }
-        ];
+    const response = await request.show();
+    await response.complete('success');
 
-        const details = {
-          displayItems: [
-            { label: 'Депонирование на счёт эксперта', amount: { currency: 'RUB', value: amountLabel } }
-          ],
-          total: {
-            label: 'Итого к депонированию',
-            amount: { currency: 'RUB', value: amountLabel }
-          }
-        };
+  } catch (e) {
+    console.log(e);
+    alert('Не удалось открыть окно оплаты. Проверь HTTPS и Safari');
+  }
+}
 
-        const options = {
-          requestPayerName: true,
-          requestPayerEmail: true
-        };
+document.getElementById('payBtn').addEventListener('click', pay);
+</script>
 
-        const request = new PaymentRequest(supportedMethods, details, options);
-        const response = await request.show();
-        await response.complete('success');
-
-        showMessage('Системное окно оплаты было успешно открыто. В реальном проекте здесь должна выполняться передача платёжного токена в ваш сервер или платёжный шлюз.', true);
-      } catch (error) {
-        showMessage('Системная оплата не была открыта. Обычно это происходит, если страница открыта не по HTTPS, браузер не поддерживает Apple Pay/Payment Request или пользователь закрыл окно.', false);
-      }
-    }
-
-    helpBtn.addEventListener('click', openSystemPayment);
-    walletBtn.addEventListener('click', openSystemPayment);
-
-    paymentForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('cardName').value.trim();
-      const number = document.getElementById('cardNumber').value.replace(/\s/g, '');
-      const exp = document.getElementById('expDate').value.trim();
-      const cvv = document.getElementById('cvv').value.trim();
-
-      if (!name || number.length < 16 || exp.length < 5 || cvv.length < 3) {
-        showMessage('Заполните данные карты полностью или используйте автозаполнение браузера.', false);
-        return;
-      }
-
-      showMessage('Форма заполнена корректно. Автозаполнение работает на уровне браузера. Для реального депонирования нужно подключить платёжный шлюз и серверную обработку.', true);
-    });
-
-    if (window.PaymentRequest && (location.protocol === 'https:' || location.hostname === 'localhost')) {
-      walletHint.textContent = 'Устройство поддерживает системные платёжные окна. Нажмите «Депонировать» или кнопку Apple Pay/системного кошелька, чтобы открыть нативную оплату.';
-    }
-  </script>
 </body>
 </html>
