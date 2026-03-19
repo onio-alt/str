@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Оплата экспертизы</title>
+  <title>Депонирование на счёт эксперта</title>
   <style>
     :root {
       --bg: #f5f7fb;
@@ -261,19 +261,19 @@
 <body>
   <main class="phone">
     <div class="topbar">
-      <div class="brand">Оплата экспертизы</div>
+      <div class="brand">Депонирование средств</div>
       <div class="badge">Защищённая форма</div>
     </div>
 
     <section class="sheet">
       <div class="hero">
-        <h1 class="title">Помочь с оплатой</h1>
-        <p class="subtitle">Мобильная страница с поддержкой автозаполнения карты и системных платёжных окон на совместимых устройствах.</p>
+        <h1 class="title">Депонирование на счёт эксперта</h1>
+        <p class="subtitle">Мобильная страница депонирования с упором на автозаполнение сохранённой карты на iPhone и других мобильных устройствах.</p>
 
         <div class="price-card">
           <div class="row">
             <span class="muted">Услуга</span>
-            <span class="strong">Экспертное исследование</span>
+            <span class="strong">Депонирование на счёт эксперта</span>
           </div>
           <div class="row">
             <span class="muted">Сумма</span>
@@ -284,22 +284,22 @@
 
       <div class="content">
         <div>
-          <h2 class="section-title">Быстрая оплата</h2>
-          <p class="helper">На телефоне браузер может предложить сохранённую карту автоматически. На поддерживаемых устройствах также можно открыть системное платёжное окно.</p>
+          <h2 class="section-title">Быстрое депонирование</h2>
+          <p class="helper">На iPhone Safari может предложить сохранённую карту автоматически, если страница открыта по HTTPS и используются корректные платёжные поля. На поддерживаемых устройствах также можно открыть системное окно оплаты.</p>
         </div>
 
         <div class="quick-pay">
-          <button class="pay-btn pay-main" id="helpBtn" type="button">Помочь</button>
-          <button class="pay-btn apple-like" id="walletBtn" type="button">Оплатить через системный кошелёк</button>
+          <button class="pay-btn pay-main" id="helpBtn" type="button">Депонировать</button>
+          <button class="pay-btn apple-like" id="walletBtn" type="button">Оплатить через Apple Pay / системный кошелёк</button>
         </div>
 
         <div class="hint" id="walletHint">
-          Для появления системного окна оплаты браузер обычно требует HTTPS или localhost и поддержку Payment Request API / Apple Pay / Google Pay со стороны устройства.
+          Для iPhone: наибольший шанс автозаполнения появляется в Safari при открытии страницы по HTTPS. HTML не может принудительно показать сохранённые карты, но корректные поля <code>autocomplete="cc-*"</code> позволяют iOS предложить реальные сохранённые данные карты.
         </div>
 
         <div>
-          <h2 class="section-title">Оплата картой</h2>
-          <p class="helper">Поля ниже помечены атрибутами автозаполнения. На iPhone, Android и в мобильных браузерах это повышает шанс, что карта предложится автоматически.</p>
+          <h2 class="section-title">Депонирование картой</h2>
+          <p class="helper">Поля ниже настроены под реальное автозаполнение: имя владельца, номер карты, срок действия и код безопасности. На iPhone Safari сохранённая карта может подставляться автоматически из Wallet/сохранённых данных браузера.</p>
         </div>
 
         <form id="paymentForm" autocomplete="on">
@@ -336,9 +336,9 @@
 
           <p class="mini-note">Важно: принудительно открыть список сохранённых карт через обычный HTML нельзя. Это решает сам браузер. Но корректные поля оплаты и кнопка системного кошелька дают максимальный шанс показать нужное предложение пользователю.</p>
 
-          <button class="pay-btn pay-alt" type="submit">Оплатить картой</button>
+          <button class="pay-btn pay-alt" type="submit">Депонировать картой</button>
 
-          <div class="secure">🔒 Данные в демо не отправляются на сервер. Это рабочий фронтенд-макет.</div>
+          <div class="secure">🔒 Это фронтенд-макет с реальной поддержкой автозаполнения полей, но без подключения платёжного шлюза.</div>
           <div class="result" id="resultBox"></div>
         </form>
 
@@ -385,21 +385,22 @@
 
     async function openSystemPayment() {
       if (!window.PaymentRequest) {
-        showMessage('На этом устройстве Payment Request API не поддерживается. Используйте кнопку «Оплатить картой» и автозаполнение браузера.', false);
+        showMessage('На этом устройстве системная оплата не поддерживается. Используйте кнопку «Депонировать картой» и автозаполнение Safari/браузера.', false);
         return;
       }
 
       try {
         const supportedMethods = [
+          { supportedMethods: 'https://apple.com/apple-pay' },
           { supportedMethods: 'basic-card' }
         ];
 
         const details = {
           displayItems: [
-            { label: 'Экспертное исследование', amount: { currency: 'RUB', value: amountLabel } }
+            { label: 'Депонирование на счёт эксперта', amount: { currency: 'RUB', value: amountLabel } }
           ],
           total: {
-            label: 'Итого к оплате',
+            label: 'Итого к депонированию',
             amount: { currency: 'RUB', value: amountLabel }
           }
         };
@@ -413,9 +414,9 @@
         const response = await request.show();
         await response.complete('success');
 
-        showMessage('Системное окно оплаты было успешно открыто. В реальном проекте здесь выполняется отправка платёжного токена на сервер.', true);
+        showMessage('Системное окно оплаты было успешно открыто. В реальном проекте здесь должна выполняться передача платёжного токена в ваш сервер или платёжный шлюз.', true);
       } catch (error) {
-        showMessage('Системная оплата не была открыта. Возможные причины: страница запущена не по HTTPS, браузер не поддерживает метод или пользователь закрыл окно.', false);
+        showMessage('Системная оплата не была открыта. Обычно это происходит, если страница открыта не по HTTPS, браузер не поддерживает Apple Pay/Payment Request или пользователь закрыл окно.', false);
       }
     }
 
@@ -434,11 +435,11 @@
         return;
       }
 
-      showMessage('Форма заполнена корректно. Это демо-страница: данные никуда не отправляются. Для реальной оплаты подключите платёжный шлюз.', true);
+      showMessage('Форма заполнена корректно. Автозаполнение работает на уровне браузера. Для реального депонирования нужно подключить платёжный шлюз и серверную обработку.', true);
     });
 
     if (window.PaymentRequest && (location.protocol === 'https:' || location.hostname === 'localhost')) {
-      walletHint.textContent = 'Устройство поддерживает системные платёжные окна. Нажмите «Помочь» или «Оплатить через системный кошелёк», чтобы открыть нативную оплату.';
+      walletHint.textContent = 'Устройство поддерживает системные платёжные окна. Нажмите «Депонировать» или кнопку Apple Pay/системного кошелька, чтобы открыть нативную оплату.';
     }
   </script>
 </body>
