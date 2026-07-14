@@ -134,7 +134,7 @@ function Contact() {
             <div>
               <div className={`field ${errs.name ? 'field--error' : ''}`}>
                 <label>Имя</label>
-                <input name="name" value={form.name} onChange={update('name')} placeholder="Введите Ваше имя"/>
+                <input name="name" value={form.name} onChange={update('name')} placeholder="Анастасия Александровна"/>
                 {errs.name && <span className="field__err">{errs.name}</span>}
               </div>
               <div className={`field ${errs.email ? 'field--error' : ''}`} style={{marginTop: 16}}>
@@ -193,15 +193,15 @@ function Footer() {
           <div>
             <h5>Меню</h5>
             <ul className="footer__list">
-              <li><a href="index.html#conclusions">Заключения</a></li>
-              <li><a href="index.html#expert">Эксперт</a></li>
-              <li><a href="index.html#advantages">Преимущества</a></li>
-              <li><a href="index.html#process">Этапы</a></li>
-              <li><a href="index.html#objects">Объекты</a></li>
-              <li><a href="index.html#examples">Примеры</a></li>
+              <li><a href="./index.html#conclusions">Заключения</a></li>
+              <li><a href="./index.html#expert">Эксперт</a></li>
+              <li><a href="./index.html#advantages">Преимущества</a></li>
+              <li><a href="./index.html#process">Этапы</a></li>
+              <li><a href="./index.html#objects">Объекты</a></li>
+              <li><a href="./index.html#examples">Примеры</a></li>
               <li><a href="pricing.html">Стоимость</a></li>
-              <li><a href="index.html#faq">Вопросы и ответы</a></li>
-              <li><a href="index.html#contact">Контакты</a></li>
+              <li><a href="./index.html#faq">Вопросы и ответы</a></li>
+              <li><a href="contact.html">Контакты</a></li>
             </ul>
           </div>
           <div>
