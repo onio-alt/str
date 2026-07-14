@@ -134,7 +134,7 @@ function Contact() {
             <div>
               <div className={`field ${errs.name ? 'field--error' : ''}`}>
                 <label>Имя</label>
-                <input name="name" value={form.name} onChange={update('name')} placeholder="Анастасия Александровна"/>
+                <input name="name" value={form.name} onChange={update('name')} placeholder="Введите Ваше имя"/>
                 {errs.name && <span className="field__err">{errs.name}</span>}
               </div>
               <div className={`field ${errs.email ? 'field--error' : ''}`} style={{marginTop: 16}}>
