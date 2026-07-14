@@ -6,7 +6,7 @@ const NAV_ITEMS = [
   { href: 'index.html#expert', label: 'Эксперт' },
   { href: 'index.html#objects', label: 'Объекты' },
   { href: 'pricing.html', label: 'Стоимость' },
-  { href: 'index.html#contact', label: 'Контакты' },
+  { href: 'contact.html', label: 'Контакты' },
 ];
 
 function Header() {
