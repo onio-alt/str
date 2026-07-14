@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Header, Footer, PRICING_GROUPS, PricingHero, PricingGroup, PricingNote */
+/* global React, ReactDOM, Header, Footer, TelegramFloat, PRICING_GROUPS, PricingHero, PricingGroup, PricingNote */
 
 function PricingApp() {
   return (
@@ -13,6 +13,7 @@ function PricingApp() {
         <Contact/>
       </main>
       <Footer/>
+      <TelegramFloat/>
     </React.Fragment>
   );
 }
