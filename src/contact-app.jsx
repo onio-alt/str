@@ -25,10 +25,6 @@ function ContactPage() {
                 <div className="contact-profile__info">
                   <p>Независимый судебный эксперт</p>
                   <h2 id="expert-contact-title">Родион Александрович Стрелков</h2>
-                  <div className="contact-profile__address">
-                    <MIcon name="location_on" size={18}/>
-                    <span>Московская область, Ленинский г.о., рп. Лопатино, ул. Сухановская, д. 10, 5 подъезд</span>
-                  </div>
                 </div>
               </div>
 
@@ -80,6 +76,7 @@ function ContactPage() {
               <div className="contact-bank__content">
                 <p className="contact-bank__owner">ИП Стрелков Родион Александрович</p>
                 <dl className="contact-bank__details">
+                  <div><dt>Фактический адрес</dt><dd>Московская область, Ленинский г.о., рп. Лопатино, ул. Сухановская, д. 10</dd></div>
                   <div><dt>ИНН</dt><dd>091706875564</dd></div>
                   <div><dt>ОГРНИП</dt><dd>325010000032740</dd></div>
                   <div><dt>Расчётный счёт</dt><dd>40802810620000814203</dd></div>
