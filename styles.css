@@ -1729,6 +1729,7 @@ a.contact-method:hover {
 .contact-form-col .contact {
   max-width: none;
   margin: 0;
+  border-radius: 10px;
 }
 
 .contact-form-col .contact__grid {
