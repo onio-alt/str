@@ -74,7 +74,7 @@ function FAQ() {
   );
 }
 
-function Contact() {
+function Contact({ title = 'Остались вопросы?', subtitle = 'Отправьте Ваш запрос и получите бесплатную консультацию от эксперта' } = {}) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', msg: '', consent: false });
   const [errs, setErrs] = useState({});
   const [sent, setSent] = useState(false);
@@ -128,8 +128,8 @@ function Contact() {
     <section className="section" id="contact">
       <div className="container">
         <form className="contact" action={CONTACT_FORM_ENDPOINT} method="POST" onSubmit={submit} noValidate>
-          <h2>Остались вопросы?</h2>
-          <p className="sub">Отправьте Ваш запрос и получите бесплатную консультацию от эксперта</p>
+          <h2>{title}</h2>
+          <p className="sub">{subtitle}</p>
           <div className="contact__grid">
             <div>
               <div className={`field ${errs.name ? 'field--error' : ''}`}>
